@@ -1,0 +1,150 @@
+        }
+
+        function renombrarTooltips() {
+            // Pausar el observer ANTES de modificar atributos
+            observer.disconnect();
+
+            document.querySelectorAll(SELECTOR_CERRAR).forEach(function (btn) {
+                actualizarLabel(btn, LABEL_CERRAR);
+            });
+
+            document.querySelectorAll(SELECTOR_ABRIR).forEach(function (btn) {
+                actualizarLabel(btn, LABEL_ABRIR);
+
+                // El bot├│n "Abrir" no tiene tooltip Bootstrap inicializado (usa data-disabled-toggle).
+                // Lo inicializamos manualmente para que use el mismo estilo redondeado.
+                btn.setAttribute('data-bs-toggle', 'tooltip');
+                btn.setAttribute('data-bs-placement', 'right');
+                if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+                    var tip = bootstrap.Tooltip.getInstance(btn);
+                    if (!tip) {
+                        new bootstrap.Tooltip(btn);
+                    } else {
+                        tip.setContent({ '.tooltip-inner': LABEL_ABRIR });
+                    }
+                }
+            });
+
+            // Reconectar despu├®s de terminar los cambios
+            observer.observe(document.documentElement, OBSERVER_CONFIG);
+        }
+
+        var OBSERVER_CONFIG = {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['data-bs-original-title', 'aria-label', 'title']
+        };
+
+        var observer = new MutationObserver(function (mutations) {
+            var hayNodosNuevos = mutations.some(function (m) { return m.addedNodes.length > 0; });
+            var hayAtributosCajon = mutations.some(function (m) {
+                return m.type === 'attributes' &&
+                    m.target.matches &&
+                    (m.target.matches(SELECTOR_CERRAR) || m.target.matches(SELECTOR_ABRIR));
+            });
+
+            if (hayNodosNuevos || hayAtributosCajon) renombrarTooltips();
+        });
+
+        // Ejecutar al cargar el DOM
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function () {
+                renombrarTooltips();
+            });
+        } else {
+            renombrarTooltips();
+        }
+    })();
+</script>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Creamos un observador que vigile cuando Moodle inyecte el tour en la pantalla
+        var observerTour = new MutationObserver(function (mutations) {
+
+            // Solo actuamos si la pantalla es tama├▒o celular (menor a 768px)
+            if (window.innerWidth <= 768) {
+
+                var tourContainer = document.querySelector('[data-flexitour="container"]');
+                if (tourContainer) {
+                    // Buscamos el t├¡tulo exacto del paso que queremos saltar
+                    var titulo = tourContainer.querySelector('.modal-title');
+
+                    // IMPORTANTE: El texto debe coincidir EXACTO con el t├¡tulo de tu paso
+                    if (titulo && titulo.innerText.includes('Enlaces a p├íginas')) {
+
+                        // 1. Hacemos la ventana totalmente invisible al instante para evitar el error visual
+                        tourContainer.style.opacity = '0';
+                        tourContainer.style.pointerEvents = 'none';
+
+                        // 2. Buscamos el bot├│n de "Siguiente" y lo presionamos autom├íticamente
+                        var btnSiguiente = tourContainer.querySelector('[data-role="next"]');
+                        if (btnSiguiente) {
+                            btnSiguiente.click();
+                        }
+                    }
+                }
+            }
+        });
+
+        // Le decimos al observador que vigile toda la p├ígina
+        observerTour.observe(document.body, { childList: true, subtree: true });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Solo actuar si estamos en la vista de un recurso
+        if (!document.body.classList.contains('path-mod-resource')) return;
+
+        // Buscar si hay contenido de recurso
+        var resourceContent = document.querySelector('.resourcecontent');
+        if (!resourceContent) return;
+
+        // Verificar si es un PDF (busca iframe o object o embed que cargue PDF)
+        var pdfEmbed = resourceContent.querySelector('iframe, object, embed');
+        if (!pdfEmbed) return;
+
+        var pdfUrl = pdfEmbed.src || pdfEmbed.data;
+        if (!pdfUrl) return;
+
+        // Verificar que realmente sea un PDF (por extensi├│n o por tipo de objeto)
+        var isPdf = pdfUrl.toLowerCase().includes('.pdf') || (pdfEmbed.tagName.toLowerCase() === 'object' && pdfEmbed.getAttribute('type') === 'application/pdf');
+        if (!isPdf) return;
+
+        // Crear el contenedor de los botones
+        var btnContainer = document.createElement('div');
+        btnContainer.className = 'pdf-buttons-container';
+
+        // Preparar URL de descarga (asegurar que fuerce descarga si es Moodle pluginfile)
+        var downloadUrl = pdfUrl;
+        if (downloadUrl.includes('pluginfile.php') && !downloadUrl.includes('forcedownload=1')) {
+            downloadUrl += (downloadUrl.includes('?') ? '&' : '?') + 'forcedownload=1';
+        }
+
+        // Bot├│n Descargar
+        var btnDownload = document.createElement('a');
+        btnDownload.href = downloadUrl;
+        btnDownload.className = 'btn-custom-pdf';
+        btnDownload.innerText = 'Descargar PDF';
+        btnDownload.setAttribute('download', '');
+
+        // Bot├│n Pantalla Completa
+        var btnFullscreen = document.createElement('button');
+        btnFullscreen.className = 'btn-custom-pdf';
+        btnFullscreen.innerText = 'Pantalla completa';
+        btnFullscreen.onclick = function () {
+            window.open(pdfUrl, '_blank');
+        };
+
+        btnContainer.appendChild(btnDownload);
+        btnContainer.appendChild(btnFullscreen);
+
+        // Insertar los botones justo antes del visor del PDF
+        resourceContent.parentNode.insertBefore(btnContainer, resourceContent);
+    });
+</script>

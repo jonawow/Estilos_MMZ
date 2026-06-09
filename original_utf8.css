@@ -1,14 +1,14 @@
 // -----------------------------------
-//  1. VARIABLES SCSS (compilación)
+//  1. VARIABLES SCSS (compilaci├│n)
 // -----------------------------------
 
-//  Fuente base — sobreescribe la variable nativa de Bootstrap
+//  Fuente base ÔÇö sobreescribe la variable nativa de Bootstrap
 $font-family-sans-serif: 'Atkinson Hyperlegible Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !default;
 $font-family-base: $font-family-sans-serif;
 
-//  Paleta por módulo — tema claro
-//  Cada módulo:  primario · primario-light · primario-dark · secundario
-//  M1–M3: colores finales. 
+//  Paleta por m├│dulo ÔÇö tema claro
+//  Cada m├│dulo:  primario ┬À primario-light ┬À primario-dark ┬À secundario
+//  M1ÔÇôM3: colores finales. 
 $paleta-morada-light: (
     primario: #215c50,
     light: #f7f7f7,
@@ -47,7 +47,7 @@ $modulos-light: (
     16: $paleta-marron-light
 );
 
-//  Paleta por módulo — tema oscuro
+//  Paleta por m├│dulo ÔÇö tema oscuro
 $paleta-morada-dark: (
     primario: #f7f7f7,
     light: #11322c,
@@ -90,7 +90,7 @@ $modulos-dark: (
 //  2. VARIABLES CSS (tokens runtime)
 // ----------------------------------------------------------------------------
 
-//  Paleta global — tonos neutros, utilidad, marca institucional
+//  Paleta global ÔÇö tonos neutros, utilidad, marca institucional
 :root {
     --general-blanco: #ffffff;
     --general-gris-fondo: #666666;
@@ -112,12 +112,12 @@ $modulos-dark: (
     --general-blanco-transparente-hover: rgba(255, 255, 255, 0.4);
 }
 
-//  Tokens por módulo — tema claro (también default)
+//  Tokens por m├│dulo ÔÇö tema claro (tambi├®n default)
 :root,
 [data-bs-theme="light"] {
     --pl-body-gris2: #e1e3ec;
 
-    // Utilidades de status (Semáforos)
+    // Utilidades de status (Sem├íforos)
     --pl-exito-dark: #005261;
     --pl-exito: #54d199;
     --pl-exito-light: #c6f7e1;
@@ -144,13 +144,13 @@ $modulos-dark: (
     --mmz-p4: #11322c;
     --mmz-textura: rgba(166, 128, 45, 0.55);
 
-    // Colores para Banner Capacitación (Light)
+    // Colores para Banner Capacitaci├│n (Light)
     --cap-p1: #215c50;
     --cap-p2: #996d15;
     --cap-p3: #b2446b;
     --cap-p4: #e6efec;
 
-    // Paleta Institucional Completa - Aula Capacitación (Light)
+    // Paleta Institucional Completa - Aula Capacitaci├│n (Light)
     --cap-color-1: #f4e9ed;
     --cap-color-2: #d8a7b6;
     --cap-color-3: #b2446b;
@@ -164,7 +164,7 @@ $modulos-dark: (
     --cap-resalte-3: #e7d295;
     --cap-resalte-4: #fff6e1;
 
-    // Colores para Banner Chico Capacitación (Mapeo M1)
+    // Colores para Banner Chico Capacitaci├│n (Mapeo M1)
     --cap-chico-1: #e6efec;
     --cap-chico-2: #215c50;
     --cap-chico-3: #996d15;
@@ -172,11 +172,11 @@ $modulos-dark: (
     --cap-chico-flecha: var(--cap-chico-2);
 }
 
-//  Tokens por módulo — tema oscuro
+//  Tokens por m├│dulo ÔÇö tema oscuro
 [data-bs-theme="dark"] {
     --pl-body-gris2: #030a11;
 
-    // Utilidades de status (Semáforos adaptados a fondo oscuro)
+    // Utilidades de status (Sem├íforos adaptados a fondo oscuro)
     --pl-exito-dark: #c6f7e1;
     --pl-exito: #54d199;
     --pl-exito-light: #005261;
@@ -203,13 +203,13 @@ $modulos-dark: (
     --mmz-p4: #efefef;
     --mmz-textura: rgba(166, 128, 45, 0.55);
 
-    // Colores para Banner Capacitación (Dark)
+    // Colores para Banner Capacitaci├│n (Dark)
     --cap-p1: #e6efec;
     --cap-p2: #a6beb9;
     --cap-p3: #fff6e1;
     --cap-p4: #215c50;
 
-    // Paleta Institucional Completa - Aula Capacitación (Dark)
+    // Paleta Institucional Completa - Aula Capacitaci├│n (Dark)
     --cap-color-1: #611232;
     --cap-color-2: #b2446b;
     --cap-color-3: #d8a7b6;
@@ -223,7 +223,7 @@ $modulos-dark: (
     --cap-resalte-3: #e7d295;
     --cap-resalte-4: #fff6e1;
 
-    // Colores para Banner Chico Capacitación (Dark Mapeo M1)
+    // Colores para Banner Chico Capacitaci├│n (Dark Mapeo M1)
     --cap-chico-1: #215c50;
     --cap-chico-2: #e6efec;
     --cap-chico-3: #a6beb9;
@@ -235,7 +235,7 @@ $modulos-dark: (
 //  3. FUENTES  (Atkinson Hyperlegible Next)
 // ----------------------------------------------------------------------------
 
-//  Formato Moodle — resuelve vía tema
+//  Formato Moodle ÔÇö resuelve v├¡a tema
 @font-face {
     font-family: 'Atkinson Hyperlegible Next';
     src: url([[font:theme|AtkinsonHyperlegibleNext-Regular]]) format('woff2');
@@ -267,7 +267,7 @@ $modulos-dark: (
     font-size: 20px !important;
 }
 
-//  Formato local — para preview/dev
+//  Formato local ÔÇö para preview/dev
 @font-face {
     font-family: 'Atkinson Hyperlegible Next';
     font-style: normal;
@@ -381,7 +381,7 @@ $modulos-dark: (
 }
 
 // ---------------------------
-//  4. TIPOGRAFÍA GLOBAL
+//  4. TIPOGRAF├ìA GLOBAL
 // ---------------------------
 
 body,
@@ -419,7 +419,7 @@ h6 {
 //  5. LAYOUT GENERAL  (fondo, contenedores, headers)
 // -----------------------------------------------------
 
-//  Fondo blanco puro en toda la página
+//  Fondo blanco puro en toda la p├ígina
 body,
 #page-wrapper,
 #page {
@@ -444,7 +444,7 @@ body {
     width: 100%;
 }
 
-//  Contenedor principal sin límites de ancho
+//  Contenedor principal sin l├¡mites de ancho
 #page.container-fluid {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -495,31 +495,31 @@ body:not(.has-secondarynavigation) #page.drawers {
     display: none !important;
 }
 
-//  Ocultar navegación innecesaria (home, mycourses, myhome)
+//  Ocultar navegaci├│n innecesaria (home, mycourses, myhome)
 .primary-navigation .nav-item[data-key="home"],
 .primary-navigation .nav-item[data-key="mycourses"],
 .primary-navigation .nav-item[data-key="myhome"] .nav-link {
     display: none !important;
 }
 
-/* Ocultar ítem de navegación: Calificaciones */
+/* Ocultar ├¡tem de navegaci├│n: Calificaciones */
 .secondary-navigation li[data-key="grades"] {
     display: none !important;
     visibility: hidden;
     pointer-events: none;
 }
 
-/* Ocultar ítem de navegación: Banco de contenido */
+/* Ocultar ├¡tem de navegaci├│n: Banco de contenido */
 .nav-item[data-key="contentbank"] {
     display: none !important;
 }
 
-//  Ocultar sólo el título principal, conservando las migas
+//  Ocultar s├│lo el t├¡tulo principal, conservando las migas
 #page-header .page-header-headings {
     display: none !important;
 }
 
-// 1. Alineación personalizada de las migas de pan (SOLO PARA CURSOS Y ACTIVIDADES)
+// 1. Alineaci├│n personalizada de las migas de pan (SOLO PARA CURSOS Y ACTIVIDADES)
 body.path-course-view,
 body.path-mod,
 body.pagelayout-course,
@@ -531,12 +531,12 @@ body.pagelayout-incourse {
         max-width: none !important;
     }
 
-    // Ocultar totalmente el título vacío izquierdo
+    // Ocultar totalmente el t├¡tulo vac├¡o izquierdo
     #page-header .me-auto {
         display: none !important;
     }
 
-    // Fuerza la alineación a la izquierda y permite ajuste manual
+    // Fuerza la alineaci├│n a la izquierda y permite ajuste manual
     #page-header .d-flex.align-items-center {
         justify-content: flex-start !important;
         padding-left: 78px !important;
@@ -617,7 +617,7 @@ h3.sectionname,
 }
 
 // ----------------------------------------------------------------------------
-//  8. LISTA + CUADRÍCULA DE ACTIVIDADES
+//  8. LISTA + CUADR├ìCULA DE ACTIVIDADES
 // ----------------------------------------------------------------------------
 
 //  Recurso: aumenta zona de click y aplica hover
@@ -767,7 +767,7 @@ li.activity {
 }
 
 // ----------------------------------------------------------------------------
-//  9. CONTENEDOR DE PESTAÑAS (OneTopic)
+//  9. CONTENEDOR DE PESTA├æAS (OneTopic)
 // ----------------------------------------------------------------------------
 
 #page-course-view-onetopic {
@@ -785,8 +785,8 @@ li.activity {
         border-radius: 12px;
     }
 
-    //  Ocultar el encabezado de sección colapsable (franja naranja/amarilla) solo en vista
-    //  En modo edición debe ser visible para permitir eliminar o editar la sección
+    //  Ocultar el encabezado de secci├│n colapsable (franja naranja/amarilla) solo en vista
+    //  En modo edici├│n debe ser visible para permitir eliminar o editar la secci├│n
     &:not(.editing) .course-section-header {
         display: none !important;
     }
@@ -801,7 +801,7 @@ li.activity {
     padding-top: 0px !important;
 }
 
-//  Pestañas (nav-link)
+//  Pesta├▒as (nav-link)
 .format_onetopic-tabs .nav-link {
     border-top: 3px solid transparent !important;
     border-radius: 4px 4px 0 0 !important;
@@ -814,8 +814,8 @@ li.activity {
     background-color: var(--general-gris-hover) !important;
 }
 
-//  Estado activo por módulo — usa directo el token raw --pl-m{n}-primario.
-//  Bucle @for genera las 16 reglas (.M1-tema … .M16-tema).
+//  Estado activo por m├│dulo ÔÇö usa directo el token raw --pl-m{n}-primario.
+//  Bucle @for genera las 16 reglas (.M1-tema ÔÇª .M16-tema).
 @for $n from 1 through 16 {
     .M#{$n}-tema .format_onetopic-tabs .nav-link.active {
         border-top: 3px solid var(--pl-m#{$n}-primario) !important;
@@ -826,7 +826,7 @@ li.activity {
     }
 }
 
-//  Fallback general — cursos sin módulo asignado
+//  Fallback general ÔÇö cursos sin m├│dulo asignado
 .format_onetopic-tabs .nav-link.active {
     border-top: 3px solid var(--general-azul-activo) !important;
     color: var(--general-azul-activo) !important;
@@ -870,7 +870,7 @@ li.activity.label:has(.rango-semana-dinamico) {
         padding-bottom: 2px !important;
     }
 
-    //  El <p> que Moodle envuelve automáticamente tiene margin por defecto
+    //  El <p> que Moodle envuelve autom├íticamente tiene margin por defecto
     .activity-altcontent p {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
@@ -976,8 +976,8 @@ li.activity.label:has(.rango-semana-dinamico) {
 .banner-modulo.banner-grande {
     min-height: 200px;
 
-    /* Institución (Bloque Izquierdo con Pico) */
-    /* Institución (Bloque Izquierdo con Pico) */
+    /* Instituci├│n (Bloque Izquierdo con Pico) */
+    /* Instituci├│n (Bloque Izquierdo con Pico) */
     .banner-institucion {
         width: 95px;
         height: 100%;
@@ -998,7 +998,7 @@ li.activity.label:has(.rango-semana-dinamico) {
         letter-spacing: 0.5px;
     }
 
-    /* Información del módulo */
+    /* Informaci├│n del m├│dulo */
     .banner-mod-info {
         flex: 1;
         display: flex;
@@ -1006,37 +1006,9 @@ li.activity.label:has(.rango-semana-dinamico) {
         padding-left: 10px;
 
         .banner-mod-icon {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: transparent !important; /* Oculta el ícono nativo de FA */
-            background-color: var(--mmz-p4); /* Toma el color claro de la paleta */
-            -webkit-mask-size: contain;
-            mask-size: contain;
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-            -webkit-mask-position: center;
-            mask-position: center;
+            color: var(--mmz-p4);
+            font-size: 24px;
             margin-right: 8px;
-        }
-
-        /* Íconos SVG Personalizados (solo cambia esta clase en el HTML) */
-        .banner-mod-icon.icono-sub-1 {
-            -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='uuid-8024f451-c07c-4d2f-afc1-31b176e15701' xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpolygon points='21 4 21 6 20 6 20 7 21 7 21 11 20 11 20 12 21 12 21 16 20 16 20 17 21 17 21 21 17 21 17 20 16 20 16 21 12 21 12 20 11 20 11 21 7 21 7 20 6 20 6 21 4 21 4 22 6 22 7 22 11 22 12 22 16 22 17 22 21 22 22 22 22 21 22 17 22 16 22 12 22 11 22 7 22 6 22 4 21 4'/%3E%3Cpath d='M5.33,7.9c-.22-1.17-.33-2.48-.33-3.9h-1c0,1.48.12,2.85.35,4.08l.98-.19Z'/%3E%3Cpath d='M8.53,15.33c.44.33.93.64,1.44.91l.46-.89c-.47-.24-.91-.52-1.31-.82l-.6.8Z'/%3E%3Cpath d='M11.21,16.8c2.08.81,4.62,1.2,7.79,1.2v-1c-3.04,0-5.47-.37-7.43-1.13l-.36.93Z'/%3E%3Cpath d='M5.08,9.08c-.13.09-.21.23-.23.39l-.16,2.49c0,.11.02.22.08.31l.39.6-.93,1.71c-.09.17-.08.37.03.52l1.14,1.64c.09.13.25.21.41.21,0,0,.02,0,.03,0,.17,0,.33-.11.41-.26l1.03-1.89,2.33-1.53s.03-.03.04-.04l1.97-.28c.17-.02.32-.14.39-.29s.05-.34-.05-.49l-1.15-1.65c-.1-.15-.28-.23-.46-.21l-1.93.21-.29-.45c-.06-.09-.15-.16-.25-.2l-2.35-.85c-.15-.05-.31-.04-.44.05ZM5.76,15.51l-.5-.72.53-.97.49.75-.52.94ZM10.16,11.35l.52.74-1.11.16-.54-.77,1.13-.12ZM5.81,10.2l1.57.57.36.56s.02.07.04.1l.33.47.54.82-1.64,1.08-.63-.91-.67-1.03.11-1.66Z'/%3E%3C/svg%3E");
-            mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='uuid-8024f451-c07c-4d2f-afc1-31b176e15701' xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpolygon points='21 4 21 6 20 6 20 7 21 7 21 11 20 11 20 12 21 12 21 16 20 16 20 17 21 17 21 21 17 21 17 20 16 20 16 21 12 21 12 20 11 20 11 21 7 21 7 20 6 20 6 21 4 21 4 22 6 22 7 22 11 22 12 22 16 22 17 22 21 22 22 22 22 21 22 17 22 16 22 12 22 11 22 7 22 6 22 4 21 4'/%3E%3Cpath d='M5.33,7.9c-.22-1.17-.33-2.48-.33-3.9h-1c0,1.48.12,2.85.35,4.08l.98-.19Z'/%3E%3Cpath d='M8.53,15.33c.44.33.93.64,1.44.91l.46-.89c-.47-.24-.91-.52-1.31-.82l-.6.8Z'/%3E%3Cpath d='M11.21,16.8c2.08.81,4.62,1.2,7.79,1.2v-1c-3.04,0-5.47-.37-7.43-1.13l-.36.93Z'/%3E%3Cpath d='M5.08,9.08c-.13.09-.21.23-.23.39l-.16,2.49c0,.11.02.22.08.31l.39.6-.93,1.71c-.09.17-.08.37.03.52l1.14,1.64c.09.13.25.21.41.21,0,0,.02,0,.03,0,.17,0,.33-.11.41-.26l1.03-1.89,2.33-1.53s.03-.03.04-.04l1.97-.28c.17-.02.32-.14.39-.29s.05-.34-.05-.49l-1.15-1.65c-.1-.15-.28-.23-.46-.21l-1.93.21-.29-.45c-.06-.09-.15-.16-.25-.2l-2.35-.85c-.15-.05-.31-.04-.44.05ZM5.76,15.51l-.5-.72.53-.97.49.75-.52.94ZM10.16,11.35l.52.74-1.11.16-.54-.77,1.13-.12ZM5.81,10.2l1.57.57.36.56s.02.07.04.1l.33.47.54.82-1.64,1.08-.63-.91-.67-1.03.11-1.66Z'/%3E%3C/svg%3E");
-        }
-        
-        .banner-mod-icon.icono-sub-2 {
-            -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='uuid-60f5baaf-745b-4d99-b332-4493e355f2fa' xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpath d='M19.84,6.01c-1.06.08-1.84,1.05-1.84,2.12v11.87c0,.55-.45,1-1,1s-1-.45-1-1,.45-1,1-1v-1H8V7.5c0-.28.22-.5.5-.5h3.52v-1h-3.52c-.83,0-1.5.67-1.5,1.5v10.5h-.89c-1,0-1.92.68-2.08,1.66-.21,1.25.75,2.33,1.96,2.34h0s11.01,0,11.01,0c1.1,0,2-.9,2-2v-10h.87c1.07,0,2.04-.78,2.12-1.84.1-1.23-.93-2.25-2.15-2.15ZM15.27,21H6c-.55,0-1-.45-1-1s.45-1,1-1h9.27c-.17.29-.27.64-.27,1s.1.71.27,1ZM20,9h-1v-1c0-.55.45-1,1-1s1,.45,1,1-.45,1-1,1Z'/%3E%3Cpath d='M12.39,13.66c-.07.2-.26.34-.47.34h-1.92v1h2.28c.43,0,.81-.28.95-.68l.43-1.28c2.15-1.25,3.48-3.54,3.48-6.04,0-1.02-.22-2-.64-2.93-.12-.26-.44-.37-.69-.23-2.48,1.38-3.69,3.6-3.67,6.16,0,.95.2,1.87.57,2.74l-.31.92ZM15.79,5.01c.22.64.34,1.3.34,1.99,0,2.02-1.01,3.88-2.66,4.99-.22-.64-.34-1.3-.34-1.99,0-2.02,1.01-3.88,2.66-4.99Z'/%3E%3C/svg%3E");
-            mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='uuid-60f5baaf-745b-4d99-b332-4493e355f2fa' xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpath d='M19.84,6.01c-1.06.08-1.84,1.05-1.84,2.12v11.87c0,.55-.45,1-1,1s-1-.45-1-1,.45-1,1-1v-1H8V7.5c0-.28.22-.5.5-.5h3.52v-1h-3.52c-.83,0-1.5.67-1.5,1.5v10.5h-.89c-1,0-1.92.68-2.08,1.66-.21,1.25.75,2.33,1.96,2.34h0s11.01,0,11.01,0c1.1,0,2-.9,2-2v-10h.87c1.07,0,2.04-.78,2.12-1.84.1-1.23-.93-2.25-2.15-2.15ZM15.27,21H6c-.55,0-1-.45-1-1s.45-1,1-1h9.27c-.17.29-.27.64-.27,1s.1.71.27,1ZM20,9h-1v-1c0-.55.45-1,1-1s1,.45,1,1-.45,1-1,1Z'/%3E%3Cpath d='M12.39,13.66c-.07.2-.26.34-.47.34h-1.92v1h2.28c.43,0,.81-.28.95-.68l.43-1.28c2.15-1.25,3.48-3.54,3.48-6.04,0-1.02-.22-2-.64-2.93-.12-.26-.44-.37-.69-.23-2.48,1.38-3.69,3.6-3.67,6.16,0,.95.2,1.87.57,2.74l-.31.92ZM15.79,5.01c.22.64.34,1.3.34,1.99,0,2.02-1.01,3.88-2.66,4.99-.22-.64-.34-1.3-.34-1.99,0-2.02,1.01-3.88,2.66-4.99Z'/%3E%3C/svg%3E");
-        }
-
-        .banner-mod-icon.icono-sub-3 {
-            -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='a' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cdefs%3E%3Cstyle%3E.b%7Bfill:none;%7D.b,.c%7Bstroke-width:0px;%7D%3C/style%3E%3C/defs%3E%3Crect class='b' x='0' y='0' width='26' height='25.99'/%3E%3Cpath class='c' d='m21,19s0-.91,0-1.55c0-.27-.22-.48-.49-.49-1.3-.05-2.17-.28-3.15-.49-1.76-.37-3.31-.7-4.36.24-1.04-.93-2.57-.6-4.31-.24-.97.2-2.05.43-3.2.48-.27.01-.49.22-.49.49v1.55h-1v1h6.85c.1,0,.19.02.28.06,1.24.58,2.49.58,3.73,0,.09-.04.18-.06.28-.06h6.85v-1h-1Zm-9.71.13c-.19-.08-.39-.13-.6-.13h-4.69v-1.08c1.05-.09,2.01-.29,2.89-.47,2.01-.42,3.08-.6,3.7.3.09.14.25.22.41.22h0c.17,0,.32-.08.41-.22.62-.91,1.77-.71,3.74-.3.87.18,1.82.38,2.85.47v1.08h-4.69c-.21,0-.41.05-.6.13-1.14.49-2.28.49-3.43,0Z'/%3E%3Cpath class='c' d='m8.02,11c.83,0,1.5-.67,1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5,1.5.67,1.5,1.5,1.5Zm0-2.08c.32,0,.58.26.58.58s-.26.58-.58.58-.58-.26-.58-.58.26-.58.58-.58Z'/%3E%3Cpath class='c' d='m16.69,12.27c.22.26.41.54.56.84.23-.08.46-.14.7-.14,1.12,0,2.04.92,2.04,2.04v.99h.99v-.99h0c0-1.68-1.36-3.04-3.04-3.04-.44,0-.87.12-1.27.3Z'/%3E%3Cpath class='c' d='m17.98,11.04c.83,0,1.5-.67,1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5,1.5.67,1.5,1.5,1.5Zm0-2.08c.32,0,.58.26.58.58s-.26.58-.58.58-.58-.26-.58-.58.26-.58.58-.58Z'/%3E%3Cpath class='c' d='m10.02,14.98c0-1.64,1.34-2.98,2.98-2.98s2.98,1.34,2.98,2.98h1c0-2.2-1.79-3.98-3.98-3.98s-3.98,1.79-3.98,3.98h1Z'/%3E%3Cpath class='c' d='m13,10c1.1,0,2-.9,2-2s-.9-2-2-2-2,.9-2,2,.9,2,2,2Zm0-3c.55,0,1,.45,1,1s-.45,1-1,1-1-.45-1-1,.45-1,1-1Z'/%3E%3Cpath class='c' d='m5,16h.99v-.99h0c0-1.12.92-2.04,2.04-2.04.24,0,.48.06.7.14.15-.3.34-.58.56-.84-.4-.18-.83-.3-1.27-.3-1.68,0-3.04,1.36-3.04,3.04h0v.99Z'/%3E%3C/svg%3E");
-            mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='a' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cdefs%3E%3Cstyle%3E.b%7Bfill:none;%7D.b,.c%7Bstroke-width:0px;%7D%3C/style%3E%3C/defs%3E%3Crect class='b' x='0' y='0' width='26' height='25.99'/%3E%3Cpath class='c' d='m21,19s0-.91,0-1.55c0-.27-.22-.48-.49-.49-1.3-.05-2.17-.28-3.15-.49-1.76-.37-3.31-.7-4.36.24-1.04-.93-2.57-.6-4.31-.24-.97.2-2.05.43-3.2.48-.27.01-.49.22-.49.49v1.55h-1v1h6.85c.1,0,.19.02.28.06,1.24.58,2.49.58,3.73,0,.09-.04.18-.06.28-.06h6.85v-1h-1Zm-9.71.13c-.19-.08-.39-.13-.6-.13h-4.69v-1.08c1.05-.09,2.01-.29,2.89-.47,2.01-.42,3.08-.6,3.7.3.09.14.25.22.41.22h0c.17,0,.32-.08.41-.22.62-.91,1.77-.71,3.74-.3.87.18,1.82.38,2.85.47v1.08h-4.69c-.21,0-.41.05-.6.13-1.14.49-2.28.49-3.43,0Z'/%3E%3Cpath class='c' d='m8.02,11c.83,0,1.5-.67,1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5,1.5.67,1.5,1.5,1.5Zm0-2.08c.32,0,.58.26.58.58s-.26.58-.58.58-.58-.26-.58-.58.26-.58.58-.58Z'/%3E%3Cpath class='c' d='m16.69,12.27c.22.26.41.54.56.84.23-.08.46-.14.7-.14,1.12,0,2.04.92,2.04,2.04v.99h.99v-.99h0c0-1.68-1.36-3.04-3.04-3.04-.44,0-.87.12-1.27.3Z'/%3E%3Cpath class='c' d='m17.98,11.04c.83,0,1.5-.67,1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5,1.5.67,1.5,1.5,1.5Zm0-2.08c.32,0,.58.26.58.58s-.26.58-.58.58-.58-.26-.58-.58.26-.58.58-.58Z'/%3E%3Cpath class='c' d='m10.02,14.98c0-1.64,1.34-2.98,2.98-2.98s2.98,1.34,2.98,2.98h1c0-2.2-1.79-3.98-3.98-3.98s-3.98,1.79-3.98,3.98h1Z'/%3E%3Cpath class='c' d='m13,10c1.1,0,2-.9,2-2s-.9-2-2-2-2,.9-2,2,.9,2,2,2Zm0-3c.55,0,1,.45,1,1s-.45,1-1,1-1-.45-1-1,.45-1,1-1Z'/%3E%3Cpath class='c' d='m5,16h.99v-.99h0c0-1.12.92-2.04,2.04-2.04.24,0,.48.06.7.14.15-.3.34-.58.56-.84-.4-.18-.83-.3-1.27-.3-1.68,0-3.04,1.36-3.04,3.04h0v.99Z'/%3E%3C/svg%3E");
         }
 
         .banner-mod-name {
@@ -1227,12 +1199,12 @@ li.activity.label:has(.rango-semana-dinamico) {
 //  11. BLOQUE AVANCE
 // ----------------------------------------------------------------------------
 
-//  Oculta el texto "Pasar ratón encima..."
+//  Oculta el texto "Pasar rat├│n encima..."
 section.block_completion_progress .progressEventInfo[id$="-info"] {
     display: none !important;
 }
 
-//  Botón "Vista general de estudiantes"
+//  Bot├│n "Vista general de estudiantes"
 section.block_completion_progress .overviewButton {
     margin-top: 10px !important;
     text-align: center !important;
@@ -1261,7 +1233,7 @@ section.block_completion_progress .overviewButton {
 //  13. PANEL DE APOYO  (drawer lateral dorado)
 // ----------------------------------------------------------------------------
 
-//  Ocultar ícono/texto nativo
+//  Ocultar ├¡cono/texto nativo
 .drawer-right-toggle .btn {
 
     i,
@@ -1284,7 +1256,7 @@ section.block_completion_progress .overviewButton {
     width: auto !important;
 }
 
-//  Botón pestaña vertical
+//  Bot├│n pesta├▒a vertical
 .drawer-right-toggle .btn {
     background-color: var(--general-dorado) !important;
     color: var(--general-blanco) !important;
@@ -1308,7 +1280,7 @@ section.block_completion_progress .overviewButton {
         width: 58px !important;
     }
 
-    //  Ícono SVG (audífonos/soporte)
+    //  ├ìcono SVG (aud├¡fonos/soporte)
     &::before {
         content: "" !important;
         display: block !important;
@@ -1344,29 +1316,29 @@ section.block_completion_progress .overviewButton {
 // Ajuste responsivo del Panel de Apoyo en celular
 @media (max-width: 768px) {
     .drawer-right-toggle .btn {
-        width: 38px !important; // Más angosto
-        min-height: 140px !important; // Más corto
+        width: 38px !important; // M├ís angosto
+        min-height: 140px !important; // M├ís corto
         padding: 12px 6px !important; // Menos relleno
         gap: 6px !important;
 
         &::before {
-            width: 18px !important; // Icono más pequeño
+            width: 18px !important; // Icono m├ís peque├▒o
             height: 18px !important;
         }
 
         &::after {
-            font-size: 12px !important; // Texto más pequeño
+            font-size: 12px !important; // Texto m├ís peque├▒o
         }
     }
 
-    // Espaciado dinámico para cabecera fija
+    // Espaciado din├ímico para cabecera fija
     [data-region="right-hand-drawer"] .drawercontent,
     .drawer-right .drawercontent {
         padding-top: 60px !important;
     }
 }
 
-//  Aseguramos que las barras de navegación siempre estén por encima del panel
+//  Aseguramos que las barras de navegaci├│n siempre est├®n por encima del panel
 .navbar.fixed-top {
     z-index: 1050 !important;
 }
@@ -1426,7 +1398,7 @@ section.block_completion_progress .overviewButton {
     transform: translateY(0);
 }
 
-//  Rediseño del interior del Panel de apoyo (Drawer derecho)
+//  Redise├▒o del interior del Panel de apoyo (Drawer derecho)
 [data-region="right-hand-drawer"],
 .drawer-right {
     background-color: var(--pl-body-gris2) !important;
@@ -1455,7 +1427,7 @@ section.block_completion_progress .overviewButton {
             padding: 1rem !important;
         }
 
-        // Títulos de bloques laterales
+        // T├¡tulos de bloques laterales
         .card-title,
         .title {
             border-bottom: none !important;
@@ -1477,7 +1449,7 @@ section.block_completion_progress .overviewButton {
             }
         }
 
-        // Subtítulos ("Mis figuras", etc.)
+        // Subt├¡tulos ("Mis figuras", etc.)
         h5,
         .subtitle,
         h6 {
@@ -1507,7 +1479,7 @@ section.block_completion_progress .overviewButton {
 //  14. MESA DE SERVICIO
 // ----------------------------------------------------------------------------
 
-//  Enlace dentro de menús (dropdown / lateral)
+//  Enlace dentro de men├║s (dropdown / lateral)
 a[href*="mesadeservicio"] {
     display: inline-flex !important;
     align-items: center !important;
@@ -1559,11 +1531,11 @@ a[href*="mesadeservicio"] {
     z-index: 1000 !important;
 }
 
-//  Botón custom dentro de la navbar
+//  Bot├│n custom dentro de la navbar
 a.btn-mesa-servicio-custom {
     color: var(--general-blanco) !important;
     background: rgba(255, 255, 255, 0.1) !important;
-    /* Fondo translúcido sutil */
+    /* Fondo transl├║cido sutil */
     padding: 6px 14px !important;
     border-radius: 50px !important;
     font-size: 14px !important;
@@ -1573,13 +1545,13 @@ a.btn-mesa-servicio-custom {
     text-decoration: none !important;
     border: none !important;
     transition: background 0.3s ease, box-shadow 0.3s ease !important;
-    /* Animación suave */
+    /* Animaci├│n suave */
 
     &:hover,
     &:focus,
     &:active {
         background: var(--general-blanco-transparente) !important;
-        /* Más opaco al pasar el mouse */
+        /* M├ís opaco al pasar el mouse */
         color: var(--general-blanco) !important;
         outline: none !important;
         box-shadow: 0 0 12px rgba(255, 255, 255, 0.25) !important;
@@ -1587,7 +1559,7 @@ a.btn-mesa-servicio-custom {
     }
 }
 
-// Espaciado para evitar solapamiento de navegación
+// Espaciado para evitar solapamiento de navegaci├│n
 .secondary-navigation .navigation {
     padding-right: 180px !important;
 }
@@ -1708,10 +1680,10 @@ a.btn-mesa-servicio-custom {
 }
 
 // ----------------------------------------------------------------------------
-//  16. OCULTAMIENTOS VARIOS (navegación, menús)
+//  16. OCULTAMIENTOS VARIOS (navegaci├│n, men├║s)
 // ----------------------------------------------------------------------------
 
-//  Oculta "Mi Comunidad" del área gris superior
+//  Oculta "Mi Comunidad" del ├írea gris superior
 .navbar .usermenu-container~a,
 #nav-notification-popover-container~a[href*="mi-comunidad"],
 .navbar-nav a[href*="mi-comunidad"] {
@@ -1727,7 +1699,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 //  17. RESPONSIVE  (media queries consolidadas)
 // ----------------------------------------------------------------------------
 
-//  Tablet grande — grid a 2 columnas
+//  Tablet grande ÔÇö grid a 2 columnas
 @media (max-width: 1050px) {
 
     .activity.assign,
@@ -1738,7 +1710,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-//  Tablet / tabletas pequeñas
+//  Tablet / tabletas peque├▒as
 @media (max-width: 991px) {
 
     //  Banners en columna
@@ -1768,7 +1740,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
         }
     }
 
-    //  Mesa de Servicio: sólo ícono, sin texto
+    //  Mesa de Servicio: s├│lo ├¡cono, sin texto
     .btn-mesa-servicio-custom {
         .texto-mesa {
             display: none !important;
@@ -1789,10 +1761,10 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-//  Tablet pequeña / celular — footer apilado y padding general de contenido
+//  Tablet peque├▒a / celular ÔÇö footer apilado y padding general de contenido
 @media (max-width: 768px) {
 
-    // Quitar paddings laterales excesivos de Moodle en toda la página (celular)
+    // Quitar paddings laterales excesivos de Moodle en toda la p├ígina (celular)
     #topofscroll,
     .main-inner {
         padding-left: 12px !important;
@@ -1845,7 +1817,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-//  Celular — grid a 1 columna, activity con margen
+//  Celular ÔÇö grid a 1 columna, activity con margen
 @media (max-width: 700px) {
 
     .activity.assign,
@@ -1893,7 +1865,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 }
 
 //  Footer: Moodle envuelve el HTML adicional en #page-footer que tiene
-//  padding propio — lo anulamos para no dejar espacio en blanco abajo.
+//  padding propio ÔÇö lo anulamos para no dejar espacio en blanco abajo.
 #page-footer,
 .footer-popover,
 [data-region="footer"],
@@ -1905,14 +1877,14 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     min-height: 0 !important;
 }
 
-//  .footer-popover en Moove es fixed/sticky y reserva espacio aunque esté vacío.
+//  .footer-popover en Moove es fixed/sticky y reserva espacio aunque est├® vac├¡o.
 .footer-popover {
     position: static !important;
     height: auto !important;
 }
 
-//  Fondo gris bajo el módulo: Moove puede aplicar bg en distintos contenedores.
-//  Apuntamos a los candidatos más comunes del tema.
+//  Fondo gris bajo el m├│dulo: Moove puede aplicar bg en distintos contenedores.
+//  Apuntamos a los candidatos m├ís comunes del tema.
 #page-content,
 .pb-3.d-print-block,
 #region-main-box,
@@ -1929,8 +1901,8 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     background-color: #ffffff !important;
 }
 
-//  Tabs onetopic — quitar la sombra guinda/roja que Bootstrap inyecta
-//  en :focus y :focus-visible al hacer clic en las pestañas.
+//  Tabs onetopic ÔÇö quitar la sombra guinda/roja que Bootstrap inyecta
+//  en :focus y :focus-visible al hacer clic en las pesta├▒as.
 .format_onetopic-tabs .nav-link {
 
     &:focus,
@@ -1967,18 +1939,18 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-// ── Botonera "Accesos directos" — CSS Grid (tabla visual) ──
+// ÔöÇÔöÇ Botonera "Accesos directos" ÔÇö CSS Grid (tabla visual) ÔöÇÔöÇ
 .botonera-container {
     flex: 7 1 0% !important; // 70 %
     align-self: stretch !important;
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    grid-template-rows: auto 1fr !important; // Título natural, botones rellenan
+    grid-template-rows: auto 1fr !important; // T├¡tulo natural, botones rellenan
     background-color: var(--bs-gray-100) !important;
     border: 1px solid var(--bs-gray-300) !important;
     border-radius: 8px !important;
     overflow: hidden !important;
-    // Resets — anulan la sección 11 original
+    // Resets ÔÇö anulan la secci├│n 11 original
     padding-top: 0 !important;
     position: static !important;
     font-family: inherit !important;
@@ -1988,13 +1960,13 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     @media (max-width: 768px) {
         grid-template-columns: 1fr !important;
         grid-template-rows: auto !important;
-        max-height: none !important; // Sin tope en móvil
+        max-height: none !important; // Sin tope en m├│vil
     }
 
-    // ── Fila 1: Título con fondo blanco ──
+    // ÔöÇÔöÇ Fila 1: T├¡tulo con fondo blanco ÔöÇÔöÇ
     &::before {
         content: "Accesos directos" !important;
-        position: static !important; // Anula position:absolute de sección 11
+        position: static !important; // Anula position:absolute de secci├│n 11
         grid-column: 1 / -1;
         grid-row: 1;
         padding: 12px 20px !important;
@@ -2010,7 +1982,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
         width: auto !important;
     }
 
-    // ── Fila 2: Cada botón ──
+    // ÔöÇÔöÇ Fila 2: Cada bot├│n ÔöÇÔöÇ
     .boton-item {
         grid-row: 2;
         display: flex !important;
@@ -2022,7 +1994,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
         border-right: 1px solid var(--bs-gray-300);
         background-color: transparent;
         transition: background-color 0.2s ease;
-        // Resets de sección 11
+        // Resets de secci├│n 11
         text-align: left !important;
         font-size: 16px !important;
 
@@ -2039,7 +2011,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 
         // Flechita Chevron
         &::after {
-            content: "›";
+            content: "ÔÇ║";
             font-size: 1.5rem;
             color: var(--bs-gray-700);
             line-height: 1;
@@ -2060,12 +2032,12 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-// ── Bloque "Avance de actividades" ──
+// ÔöÇÔöÇ Bloque "Avance de actividades" ÔöÇÔöÇ
 .block_completion_progress.card {
     flex: 3 1 0% !important; // 30 %
     width: auto !important;
     align-self: stretch !important;
-    max-height: 200px !important; // Sincronización de altura máxima
+    max-height: 200px !important; // Sincronizaci├│n de altura m├íxima
     overflow-y: auto !important; // Scroll si el contenido excede
     background-color: var(--bs-gray-100) !important;
     border: 1px solid var(--bs-gray-300) !important;
@@ -2074,11 +2046,11 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     margin-bottom: 0 !important;
 
     @media (max-width: 768px) {
-        max-height: none !important; // Sin tope en móvil
+        max-height: none !important; // Sin tope en m├│vil
     }
 
     .card-body {
-        padding: 0.6rem 1rem !important; // Más compacto
+        padding: 0.6rem 1rem !important; // M├ís compacto
     }
 
     .card-title {
@@ -2136,18 +2108,18 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
         }
     }
 
-    // Info de la actividad al pasar el ratón — en fila horizontal
+    // Info de la actividad al pasar el rat├│n ÔÇö en fila horizontal
     // (nombre a la izquierda, estado + fecha a la derecha)
     .progressEventInfo:not([id$="-info"]) {
         font-size: 13px !important;
         line-height: 1.4 !important;
 
-        // Ocultar saltos de línea inyectados
+        // Ocultar saltos de l├¡nea inyectados
         br {
             display: none !important;
         }
 
-        // Nombre de la actividad → inline a la izquierda
+        // Nombre de la actividad ÔåÆ inline a la izquierda
         .action_link {
             display: inline-flex !important;
             align-items: center !important;
@@ -2162,14 +2134,14 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
             }
         }
 
-        // Ícono de estado (✕) → inline
+        // ├ìcono de estado (Ô£ò) ÔåÆ inline
         .icon.iconInInfo {
             vertical-align: middle !important;
             width: 14px !important;
             height: 14px !important;
         }
 
-        // Fecha esperada → inline al lado
+        // Fecha esperada ÔåÆ inline al lado
         .expectedBy {
             display: inline !important;
             font-size: 12px !important;
@@ -2180,7 +2152,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 }
 
 // -------------------------------
-//  20. ANIMACIÓN LOGO FOOTER
+//  20. ANIMACI├ôN LOGO FOOTER
 // -------------------------------
 .logo-enlace {
     display: inline-block;
@@ -2209,7 +2181,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     box-shadow: none !important;
 }
 
-/* ── Flechas base ── */
+/* ÔöÇÔöÇ Flechas base ÔöÇÔöÇ */
 #prev-activity .larrow,
 #next-activity .rarrow {
     display: inline-flex;
@@ -2234,7 +2206,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     /* el click sube al padre */
 }
 
-/* ── Hover (solo en dispositivos con puntero fino) ── */
+/* ÔöÇÔöÇ Hover (solo en dispositivos con puntero fino) ÔöÇÔöÇ */
 @media (hover: hover) and (pointer: fine) {
 
     #prev-activity .larrow:hover,
@@ -2244,35 +2216,35 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-/* ── Active (táctil + ratón) ── */
+/* ÔöÇÔöÇ Active (t├íctil + rat├│n) ÔöÇÔöÇ */
 #prev-activity .larrow:active,
 #next-activity .rarrow:active {
     transform: scale(0.95);
     background: var(--bs-gray-500);
 }
 
-/* ── Focus para teclado ── */
+/* ÔöÇÔöÇ Focus para teclado ÔöÇÔöÇ */
 #prev-activity .larrow:focus-visible,
 #next-activity .rarrow:focus-visible {
     outline: 2px solid var(--bs-primary, #0d6efd);
     outline-offset: 3px;
 }
 
-/* ── Responsive: tablet (≤768px) ── */
+/* ÔöÇÔöÇ Responsive: tablet (Ôëñ768px) ÔöÇÔöÇ */
 @media (max-width: 768px) {
 
     #prev-activity .larrow,
     #next-activity .rarrow {
         padding: 12px 16px;
-        /* área táctil más grande */
+        /* ├írea t├íctil m├ís grande */
         min-width: 44px;
         min-height: 44px;
-        /* mínimo WCAG para táctil */
+        /* m├¡nimo WCAG para t├íctil */
         border-radius: 10px;
     }
 }
 
-/* ── Responsive: móvil (≤480px) ── */
+/* ÔöÇÔöÇ Responsive: m├│vil (Ôëñ480px) ÔöÇÔöÇ */
 @media (max-width: 480px) {
 
     #prev-activity .larrow,
@@ -2284,11 +2256,11 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     #prev-activity .larrow i,
     #next-activity .rarrow i {
         font-size: 1.1rem;
-        /* ícono un poco más grande */
+        /* ├¡cono un poco m├ís grande */
     }
 }
 
-/* ── Sin animaciones si el usuario lo prefiere ── */
+/* ÔöÇÔöÇ Sin animaciones si el usuario lo prefiere ÔöÇÔöÇ */
 @media (prefers-reduced-motion: reduce) {
 
     #prev-activity .larrow,
@@ -2316,7 +2288,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     box-shadow: inset 0 0 0 1.5px rgba(26, 95, 180, 0.25);
 }
 
-/* Línea inferior que "subraya" la zona activa */
+/* L├¡nea inferior que "subraya" la zona activa */
 .logo-zone::after {
     content: '';
     position: absolute;
@@ -2334,7 +2306,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     opacity: 1;
 }
 
-/* Tooltip con nombre de la institución */
+/* Tooltip con nombre de la instituci├│n */
 .logo-zone-tooltip {
     position: absolute;
     top: calc(100% + 10px);
@@ -2369,8 +2341,8 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 }
 
 // ----------------------------------------------------------------------------
-//  23. CENTRADO DE BOTONES EN ACTIVIDADES ESPECÍFICAS
-//      (TAREA / CUESTIONARIO / CALIFICACIÓN)
+//  23. CENTRADO DE BOTONES EN ACTIVIDADES ESPEC├ìFICAS
+//      (TAREA / CUESTIONARIO / CALIFICACI├ôN)
 // ============================================================================
 
 // --- Espaciado general (arriba y abajo) para estos botones ---
@@ -2387,7 +2359,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     margin-bottom: 20px !important;
 }
 
-// Tamaño de botones en actividades y cuestionarios
+// Tama├▒o de botones en actividades y cuestionarios
 .path-mod-assign .tertiary-navigation .navitem .btn,
 .path-mod-questionnaire .tertiary-navigation .navitem .btn,
 .path-mod-assign .singlebutton .btn,
@@ -2443,7 +2415,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     transform: translateY(0);
 }
 
-// 1) NAVEGACIÓN TERCIARIA (Moodle 5.1): Centrar botones de acción principal ("Calificación", etc.)
+// 1) NAVEGACI├ôN TERCIARIA (Moodle 5.1): Centrar botones de acci├│n principal ("Calificaci├│n", etc.)
 .path-mod-assign .tertiary-navigation .d-flex,
 .path-mod-questionnaire .tertiary-navigation .d-flex {
     justify-content: center !important;
@@ -2460,7 +2432,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     justify-content: center;
 }
 
-// 2) TAREA (mod/assign): centrar "Añadir envío" en el activity header o en singlebutton
+// 2) TAREA (mod/assign): centrar "A├▒adir env├¡o" en el activity header o en singlebutton
 .path-mod-assign .d-flex.flex-wrap.gap-2:has(.singlebutton),
 .path-mod-assign .activity-header>.d-flex {
     justify-content: center !important;
@@ -2519,7 +2491,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     text-align: center !important;
 }
 
-// 4) CALIFICACIÓN (mod/assign): Respaldos para compatibilidad con vistas clásicas
+// 4) CALIFICACI├ôN (mod/assign): Respaldos para compatibilidad con vistas cl├ísicas
 .path-mod-assign .activity-header .d-flex.flex-wrap.gap-2>div:has(a.btn.btn-primary[href*="/mod/assign/view.php"][href*="action=grading"]),
 .path-mod-assign .activity-header .d-flex.flex-wrap.gap-2>div:has(.gradingbutton .btn.btn-primary) {
     margin-left: auto !important;
@@ -2543,7 +2515,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 }
 
 // ----------------------------------------------------------------------------
-//  24. BLOQUE DE PARTICIPANTES (MIS FIGURAS, COMPAÑEROS)
+//  24. BLOQUE DE PARTICIPANTES (MIS FIGURAS, COMPA├æEROS)
 // ----------------------------------------------------------------------------
 
 .participantes2-section-title {
@@ -2595,7 +2567,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 //  25. AVISOS DEBAJO DEL TITULO
 // ----------------------------------------------------------------------------
 
-// Base compartida — estructura y tipografía
+// Base compartida ÔÇö estructura y tipograf├¡a
 .aviso-contenido {
     display: flex;
     align-items: center;
@@ -2614,10 +2586,10 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-// Colores por módulo — tema claro
+// Colores por m├│dulo ÔÇö tema claro
 @each $n, $c in $modulos-light {
     .aviso-m#{$n} {
-        background-color: map-get($c, light) !important; // Moradito claro (normal), idéntico al banner
+        background-color: map-get($c, light) !important; // Moradito claro (normal), id├®ntico al banner
         border-color: map-get($c, primario) !important;
         color: map-get($c, primario) !important;
 
@@ -2631,7 +2603,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-// Colores por módulo — tema oscuro
+// Colores por m├│dulo ÔÇö tema oscuro
 [data-bs-theme="dark"] {
     @each $n, $c in $modulos-dark {
         .aviso-m#{$n} {
@@ -2661,14 +2633,14 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     margin-bottom: 1rem;
 }
 
-// Color por módulo — tema claro
+// Color por m├│dulo ÔÇö tema claro
 @each $n, $c in $modulos-light {
     .titulo-m#{$n} h1 {
         color: map-get($c, primario);
     }
 }
 
-// Color por módulo — tema oscuro
+// Color por m├│dulo ÔÇö tema oscuro
 [data-bs-theme="dark"] {
     @each $n, $c in $modulos-dark {
         .titulo-m#{$n} h1 {
@@ -2694,7 +2666,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     color: #ffffff !important;
     border: none;
     border-radius: 25px;
-    /* Forma de píldora */
+    /* Forma de p├¡ldora */
     padding: 10px 30px;
     font-size: 14px;
     font-weight: 600;
@@ -2710,7 +2682,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 .btn-custom-pdf:hover,
 .btn-custom-pdf:focus {
     background-color: #8c682a;
-    /* Tono más oscuro al pasar el mouse */
+    /* Tono m├ís oscuro al pasar el mouse */
     color: #ffffff !important;
     transform: translateY(-2px);
     text-decoration: none !important;
@@ -2719,9 +2691,9 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 /* ----------------------------------------------------------------------------
    28. RUBRICA
 ---------------------------------------------------------------------------- */
-/* RÚBRICAS: TABLA RESPONSIVA Y PROPORCIONADA */
+/* R├ÜBRICAS: TABLA RESPONSIVA Y PROPORCIONADA */
 
-/* Contenedor principal: scroll horizontal en móvil */
+/* Contenedor principal: scroll horizontal en m├│vil */
 .gradingform_rubric .criteria {
     width: 100% !important;
     table-layout: fixed !important;
@@ -2777,7 +2749,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     background-color: #f0f0f0 !important;
 }
 
-/* Puntuación destacada */
+/* Puntuaci├│n destacada */
 .gradingform_rubric .criterion .levels .level .score {
     display: block !important;
     margin-top: 6px !important;
@@ -2788,7 +2760,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 }
 
 
-/* RÚBRICAS: QUITAR ÍCONO + DE BOTONES AÑADIR NIVEL */
+/* R├ÜBRICAS: QUITAR ├ìCONO + DE BOTONES A├æADIR NIVEL */
 
 .gradingform_rubric td.addlevel {
     position: relative !important;
@@ -2806,9 +2778,9 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     display: none !important;
 }
 
-/* RÚBRICAS: REVERT FLEXBOX + FIX FILAS UNIFORME */
+/* R├ÜBRICAS: REVERT FLEXBOX + FIX FILAS UNIFORME */
 
-/* Limpiar el flexbox que rompió el layout */
+/* Limpiar el flexbox que rompi├│ el layout */
 .gradingform_rubric .criterion>td.levels,
 .gradingform_rubric .criterion>td.levels>table,
 .gradingform_rubric .criterion>td.levels>table>tbody,
@@ -2825,7 +2797,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     vertical-align: middle !important;
 }
 
-/* Forzar saltos de línea automáticos si usas guiones o patrones */
+/* Forzar saltos de l├¡nea autom├íticos si usas guiones o patrones */
 .criterion .description {
     white-space: pre-line;
 }
@@ -2834,13 +2806,13 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
 //  CORRECCIONES GLOBALES
 // ----------------------------------------------------------------------------
 
-/* Ocultar el iframe y su contenedor cuando el archivo es el señuelo .bmp */
+/* Ocultar el iframe y su contenedor cuando el archivo es el se├▒uelo .bmp */
 .path-mod-resource .resourcecontent:has(iframe[src*=".bmp"]),
 .path-mod-resource iframe#resourceobject[src*=".bmp"] {
     display: none !important;
 }
 
-/*  CORRECCIÓN: Menú desplegable "Más" en la navegación secundaria*/
+/*  CORRECCI├ôN: Men├║ desplegable "M├ís" en la navegaci├│n secundaria*/
 
 .secondary-navigation .dropdown-menu[data-region="moredropdown"] {
     background-color: #ffffff !important;
@@ -2864,7 +2836,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
-//  Contenedor de Accesibilidad — forzar posición fija inferior
+//  Contenedor de Accesibilidad ÔÇö forzar posici├│n fija inferior
 .local-accessibility-buttoncontainer {
     position: fixed !important;
     top: auto !important;
@@ -2873,7 +2845,7 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     z-index: 1050 !important;
 }
 
-//  Botón de Accesibilidad — mantener forma circular en todas las páginas
+//  Bot├│n de Accesibilidad ÔÇö mantener forma circular en todas las p├íginas
 //  (el CSS de plugins como Quiz puede aplastar su padding/width heredado de .btn)
 button[title="Accesibilidad"] {
     width: 42px !important;
@@ -2889,7 +2861,7 @@ button[title="Accesibilidad"] {
     box-sizing: border-box !important;
 }
 
-/* CORRECCIÓN GLOBAL: MOODLE USER TOURS*/
+/* CORRECCI├ôN GLOBAL: MOODLE USER TOURS*/
 [data-flexitour="container"] {
     z-index: 1080 !important;
     /* Asegura que supere el backdrop oscuro de Moodle/Bootstrap */
@@ -2902,17 +2874,17 @@ button[title="Accesibilidad"] {
 
 /* Centrado absoluto de User Tours */
 [data-flexitour="container"].orphan {
-    /* Sobreescritura de posición dinámica de Moodle JS */
+    /* Sobreescritura de posici├│n din├ímica de Moodle JS */
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
 
-    /* Reseteo de márgenes nativos */
+    /* Reseteo de m├írgenes nativos */
     margin: 0 !important;
 }
 
-/*Quitar el saludo de plataforma arriba de módulos al inicio*/
+/*Quitar el saludo de plataforma arriba de m├│dulos al inicio*/
 .page-header-headings h1 {
     display: none !important;
 }
@@ -3161,7 +3133,7 @@ button[title="Accesibilidad"] {
 
 
 /* ============================================
-   CLASES UTILITARIAS GENÉRICAS
+   CLASES UTILITARIAS GEN├ëRICAS
    (usan las variables del tema activo)
    ============================================ */
 
@@ -3959,7 +3931,7 @@ s .mainPlantilla23 .interactivo:hover {
 }
 
 .mainPlantilla23 .tab-label::after {
-    content: "❯";
+    content: "ÔØ»";
     width: 1em;
     height: 1em;
     text-align: center;
@@ -4470,7 +4442,7 @@ s .mainPlantilla23 .interactivo:hover {
 
 /*-------------/ESTILOS 2026------------*/
 
-/* Reparar salto de línea en menús de árbol (Administración/Navegación) */
+/* Reparar salto de l├¡nea en men├║s de ├írbol (Administraci├│n/Navegaci├│n) */
 .block_navigation .tree_item,
 .block_settings .tree_item,
 .path-admin .tree_item {

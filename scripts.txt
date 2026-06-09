@@ -1,53 +1,12 @@
-<footer class="mi-nuevo-footer">
 
-    <div class="footer-columna footer-info">
-        <p>Avenida Revolución 1425, Colonia Campestre,<br>
-            Alcaldía Álvaro Obregón, Ciudad de México, C.P. 01040</p>
-    </div>
-
-    <div class="footer-columna footer-redes">
-        <p class="texto-siguenos">Síguenos en nuestras<br><strong>REDES SOCIALES</strong></p>
-        <div class="redes-sep">
-            <a href="https://www.facebook.com/ComunidadDGB/" target="_blank" class="circulo-social"><i
-                    class="fa fa-facebook"></i></a>
-            <a href="https://x.com/SEP_mx" target="_blank" class="circulo-social"><svg
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                    style="width: 1em; height: 1em; fill: currentColor;">
-                    <path
-                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-                </svg></a>
-            <a href="https://www.instagram.com/dgbcomunidad/" target="_blank" class="circulo-social"><i
-                    class="fa fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@direcciongeneraldelbachill3536" target="_blank" class="circulo-social"><i
-                    class="fa fa-youtube-play"></i></a>
-            <a href="https://www.tiktok.com/@dgb_comunidad" target="_blank" class="circulo-social"><i
-                    class="fa-brands fa-tiktok"></i></a>
-        </div>
-    </div>
-
-    <div class="footer-columna footer-enlaces">
-        <ul>
-            <li class="usertour"><a id="resetpagetour" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i>
-                    Tutorial</a></li>
-            <li><a href="https://dgb.sep.gob.mx/" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i>
-                    Contacto</a></li>
-        </ul>
-    </div>
-
-
-</footer>
-
-
-
-<script>
     /*  document.addEventListener("DOMContentLoaded", function () {
-          // No ejecutar en la página de login
+          // No ejecutar en la p├ígina de login
           if (document.body.classList.contains('path-login') || document.body.classList.contains('pagelayout-login') || document.body.id === 'page-login-index') {
               return;
           }
   
           // 1. Aseguramos que la barra roja (secundaria) EXISTA siempre. 
-          // Moodle la elimina por completo en la vista de estudiantes dentro de recursos porque no tienen pestañas nativas.
+          // Moodle la elimina por completo en la vista de estudiantes dentro de recursos porque no tienen pesta├▒as nativas.
           var navContainer = document.querySelector('.secondary-navigation');
           if (!navContainer) {
               navContainer = document.createElement('div');
@@ -56,7 +15,7 @@
               // Estructura exacta del tema Moove para que herede el centrado y posiciones originales
               navContainer.innerHTML = '<div class="moove-container-fluid"><nav class="moremenu navigation observed"><ul class="nav more-nav nav-tabs" role="tablist"></ul></nav></div>';
   
-              // La barra secundaria nativa en Moodle 4+ va AFUERA del div #page, justo debajo de la navegación primaria.
+              // La barra secundaria nativa en Moodle 4+ va AFUERA del div #page, justo debajo de la navegaci├│n primaria.
               var pageDiv = document.getElementById('page');
               if (pageDiv) {
                   pageDiv.before(navContainer);
@@ -86,7 +45,7 @@
   
                       btnContainer.appendChild(a);
   
-                      // Lo pegamos a la raíz de la barra para evitar problemas de overflow con moove-container-fluid
+                      // Lo pegamos a la ra├¡z de la barra para evitar problemas de overflow con moove-container-fluid
                       nav.appendChild(btnContainer);
                   }
               });
@@ -100,17 +59,20 @@
 </script>
 
 
-<script>
+
+
+
+
     document.addEventListener("DOMContentLoaded", function () {
         var esEstudiante = !document.querySelector('[data-action="toggle-editmode"], .editmode-switch-form');
 
-        // Oculta "Administración del sitio" y "Mi Comunidad" del área gris SOLO a estudiantes
+        // Oculta "Administraci├│n del sitio" y "Mi Comunidad" del ├írea gris SOLO a estudiantes
         if (esEstudiante) {
             document.querySelectorAll('.navbar-nav a, #usernavigation a').forEach(function (a) {
                 var href = a.getAttribute('href') || '';
                 var texto = a.textContent.trim().toLowerCase();
                 if (href.includes('admin') || href.includes('mi-comunidad') ||
-                    texto.includes('administración') || texto.includes('mi comunidad')) {
+                    texto.includes('administraci├│n') || texto.includes('mi comunidad')) {
                     var li = a.closest('li') || a;
                     li.style.display = 'none';
                 }
@@ -123,8 +85,8 @@
         var navUl = navContainer.querySelector('ul.nav.more-nav.nav-tabs');
         if (!navUl) return;
 
-        // --- Agrega el botón Inicio PARA TODOS (Admins, Profesores y Estudiantes) ---
-        // Verificamos si ya existe el botón Inicio (para no duplicarlo en la página principal donde Moodle sí lo pone)
+        // --- Agrega el bot├│n Inicio PARA TODOS (Admins, Profesores y Estudiantes) ---
+        // Verificamos si ya existe el bot├│n Inicio (para no duplicarlo en la p├ígina principal donde Moodle s├¡ lo pone)
         var inicioExiste = Array.from(navUl.querySelectorAll('a.nav-link')).some(function (a) {
             return a.textContent.trim().toLowerCase() === 'inicio';
         });
@@ -134,7 +96,7 @@
             liInicio.className = 'nav-item';
             liInicio.setAttribute('role', 'none');
 
-            // Obtiene la URL base de Moodle dinámicamente (ej. /desarrollo5 o la raíz en producción)
+            // Obtiene la URL base de Moodle din├ímicamente (ej. /desarrollo5 o la ra├¡z en producci├│n)
             var urlInicio = (typeof M !== 'undefined' && M.cfg && M.cfg.wwwroot) ? M.cfg.wwwroot + '/' : '/';
 
             liInicio.innerHTML = '<a role="menuitem" class="nav-link" href="' + urlInicio + '">Inicio</a>';
@@ -143,13 +105,13 @@
 
         // --- Agrega botones extra en la barra roja SOLO a estudiantes ---
         if (esEstudiante) {
-            // Botón Mi comunidad
+            // Bot├│n Mi comunidad
             var liComunidad = document.createElement('li');
             liComunidad.className = 'nav-item';
             liComunidad.setAttribute('role', 'none');
             liComunidad.innerHTML = '<a role="menuitem" class="nav-link" href="https://prepaenlinea.sep.gob.mx/mi-comunidad/" target="_blank">Mi comunidad</a>';
 
-            // Inserta Mi comunidad antes del botón "Más" o al final
+            // Inserta Mi comunidad antes del bot├│n "M├ís" o al final
             var masBtn = navUl.querySelector('[data-region="morebutton"]');
             if (masBtn) {
                 navUl.insertBefore(liComunidad, masBtn);
@@ -162,8 +124,11 @@
     });
 </script>
 
-<script>
-    /*Script para mover el bloque de Avance a la presentación*/
+
+
+
+
+    /*Script para mover el bloque de Avance a la presentaci├│n*/
     document.addEventListener("DOMContentLoaded", function () {
 
         function moverBloque() {
@@ -201,7 +166,10 @@
 
 
 
-<script>
+
+
+
+
     /*Script para los banners*/
     document.addEventListener("DOMContentLoaded", function () {
         // 1. Obtener ID real del curso desde el body (nunca falla, ni en PDFs)
@@ -216,13 +184,13 @@
         // Caja fuerte en memoria exclusiva para este curso
         var keyMemoriaChico = 'banner_chico_curso_' + idCurso;
 
-        // Buscamos los bloques físicos en la página
+        // Buscamos los bloques f├¡sicos en la p├ígina
         var bloqueGrandeFisico = document.querySelector('.block_html .banner-grande');
         var bloqueChicoFisico = document.querySelector('.block_html .banner-chico, .block_html .banner-modulo:not(.banner-grande)');
         var bloqueCapacitacionFisico = document.querySelector('.block_html .banner-capacitacion');
         var bannerParaClonar = null;
 
-        // A. ¿ESTAMOS EN LA PORTADA DEL CURSO? (Vemos los bloques físicos)
+        // A. ┬┐ESTAMOS EN LA PORTADA DEL CURSO? (Vemos los bloques f├¡sicos)
         if (bloqueGrandeFisico || bloqueChicoFisico || bloqueCapacitacionFisico) {
 
             if (bloqueCapacitacionFisico) {
@@ -236,7 +204,7 @@
                 sessionStorage.setItem(keyMemoriaChico, bloqueChicoFisico.outerHTML);
             }
 
-            // Escondemos TODOS los bloques del panel lateral (a menos que el profe esté editando)
+            // Escondemos TODOS los bloques del panel lateral (a menos que el profe est├® editando)
             if (!document.body.classList.contains('editing')) {
                 document.querySelectorAll('.block_html').forEach(function (bloque) {
                     if (bloque.querySelector('.banner-grande') || bloque.querySelector('.banner-chico') || bloque.querySelector('.banner-capacitacion') || bloque.querySelector('.banner-modulo')) {
@@ -245,7 +213,7 @@
                 });
             }
         }
-        // B. Banners chicos para recurso, Moodle escondió los paneles
+        // B. Banners chicos para recurso, Moodle escondi├│ los paneles
         else {
             // Sacamos el banner CHICO de la memoria
             var bannerGuardado = sessionStorage.getItem(keyMemoriaChico);
@@ -269,14 +237,17 @@
 </script>
 
 
-<script>
+
+
+
+
     document.addEventListener('DOMContentLoaded', function () {
-        // Variable para detectar si es estudiante (sin botón de edición)
+        // Variable para detectar si es estudiante (sin bot├│n de edici├│n)
         var esEstudiante = !document.querySelector('[data-action="toggle-editmode"], .editmode-switch-form');
         var fechaBase = null;
         var etiquetaMaestra = null;
 
-        // INTENTO 1: Buscar en Smart Label generada automáticamente (ej. "Inicio del curso: 7/04/26")
+        // INTENTO 1: Buscar en Smart Label generada autom├íticamente (ej. "Inicio del curso: 7/04/26")
         var xpathSmart = "//text()[contains(., 'Inicio del curso:')]";
         var resultSmart = document.evaluate(xpathSmart, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
 
@@ -331,15 +302,15 @@
             }
         }
 
-        // SI ENCONTRAMOS UNA FECHA DE INICIO VÁLIDA
+        // SI ENCONTRAMOS UNA FECHA DE INICIO V├üLIDA
         if (fechaBase) {
 
-            // 1. El código original ocultaba toda la etiqueta al estudiante. Lo hemos retirado
-            // para que los datos del plugin Smart Label sí se muestren.
+            // 1. El c├│digo original ocultaba toda la etiqueta al estudiante. Lo hemos retirado
+            // para que los datos del plugin Smart Label s├¡ se muestren.
 
             var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
-            // Función matemática para sumar semanas
+            // Funci├│n matem├ítica para sumar semanas
             function obtenerRangoFechas(semanasSumadas) {
                 var inicio = new Date(fechaBase);
                 inicio.setDate(fechaBase.getDate() + (semanasSumadas * 7));
@@ -384,7 +355,10 @@
         }
     });
 </script>
-<script>
+
+
+
+
     // Flechas de contenido
     document.addEventListener("DOMContentLoaded", function () {
         setupNavArrow("#prev-activity .larrow", "#prev-activity-link");
@@ -418,7 +392,10 @@
         });
     }
 </script>
-<script>
+
+
+
+
     document.addEventListener("DOMContentLoaded", function () {
         var progresoBlocks = document.querySelectorAll('.block_completion_progress .card-body');
         progresoBlocks.forEach(function (body) {
@@ -430,7 +407,7 @@
                 <div class="leyenda-item"><span class="punto completada"></span> Completada</div>
                 <div class="leyenda-item"><span class="punto enviada"></span> Enviada no completada</div>
                 <div class="leyenda-item"><span class="punto no-completada"></span> No completada</div>
-                <div class="leyenda-item"><span class="punto proxima"></span> Próxima a realizarse</div>
+                <div class="leyenda-item"><span class="punto proxima"></span> Pr├│xima a realizarse</div>
             `;
                 if (title) {
                     title.after(leyenda);
@@ -442,16 +419,19 @@
     });
 </script>
 
-<script>
+
+
+
+
     document.addEventListener("DOMContentLoaded", function () {
         const logoImg = document.querySelector(".navbar-brand img");
         if (!logoImg) return;
 
         const zones = [
-            { from: 0, to: 33, url: "https://www.gob.mx/", label: "Gobierno de México" },
-            { from: 36, to: 58, url: "https://www.gob.mx/sep", label: "Secretaría de Educación Pública" },
+            { from: 0, to: 33, url: "https://www.gob.mx/", label: "Gobierno de M├®xico" },
+            { from: 36, to: 58, url: "https://www.gob.mx/sep", label: "Secretar├¡a de Educaci├│n P├║blica" },
             { from: 61, to: 81, url: "https://dgb.sep.gob.mx/", label: "Bachillerato Nacional" },
-            { from: 85, to: 98, url: "https://dgb.sep.gob.mx/", label: "Dirección General del Bachillerato" },
+            { from: 85, to: 98, url: "https://dgb.sep.gob.mx/", label: "Direcci├│n General del Bachillerato" },
         ];
 
         // Envolver la imagen en un contenedor relativo
@@ -471,7 +451,7 @@
             a.style.left = zone.from + "%";
             a.style.width = (zone.to - zone.from) + "%";
 
-            // Tooltip con el nombre de la institución
+            // Tooltip con el nombre de la instituci├│n
             const tip = document.createElement("span");
             tip.classList.add("logo-zone-tooltip");
             tip.textContent = zone.label;
@@ -482,12 +462,15 @@
     });
 </script>
 
-<script>
+
+
+
+
     // -----------------------------------------------------------------------
     //  Renombrar tooltips del drawer de bloques
-    //  "Cajón del bloque" → "Cerrar/Abrir panel de apoyo"
+    //  "Caj├│n del bloque" ÔåÆ "Cerrar/Abrir panel de apoyo"
     //  Se desconecta el observer antes de modificar atributos para evitar
-    //  el bucle infinito: cambio → disparo → cambio → disparo...
+    //  el bucle infinito: cambio ÔåÆ disparo ÔåÆ cambio ÔåÆ disparo...
     // -----------------------------------------------------------------------
     (function () {
         var LABEL_CERRAR = 'Cerrar panel de apoyo';
@@ -501,8 +484,8 @@
             if (el.getAttribute('aria-label') !== texto) el.setAttribute('aria-label', texto);
             if (el.getAttribute('data-bs-original-title') !== texto) el.setAttribute('data-bs-original-title', texto);
             // NO tocar 'title': lo usa el navegador para el tooltip cuadrado nativo,
-            // que se duplicaría con el tooltip de Bootstrap ya inicializado.
-            el.removeAttribute('title'); // limpiar si quedó de antes
+            // que se duplicar├¡a con el tooltip de Bootstrap ya inicializado.
+            el.removeAttribute('title'); // limpiar si qued├│ de antes
             var sr = el.querySelector('.sr-only');
             if (sr && sr.textContent !== texto) sr.textContent = texto;
         }
@@ -518,7 +501,7 @@
             document.querySelectorAll(SELECTOR_ABRIR).forEach(function (btn) {
                 actualizarLabel(btn, LABEL_ABRIR);
 
-                // El botón "Abrir" no tiene tooltip Bootstrap inicializado (usa data-disabled-toggle).
+                // El bot├│n "Abrir" no tiene tooltip Bootstrap inicializado (usa data-disabled-toggle).
                 // Lo inicializamos manualmente para que use el mismo estilo redondeado.
                 btn.setAttribute('data-bs-toggle', 'tooltip');
                 btn.setAttribute('data-bs-placement', 'right');
@@ -532,7 +515,7 @@
                 }
             });
 
-            // Reconectar después de terminar los cambios
+            // Reconectar despu├®s de terminar los cambios
             observer.observe(document.documentElement, OBSERVER_CONFIG);
         }
 
@@ -568,27 +551,30 @@
 
 
 
-<script>
+
+
+
+
     document.addEventListener("DOMContentLoaded", function () {
         // Creamos un observador que vigile cuando Moodle inyecte el tour en la pantalla
         var observerTour = new MutationObserver(function (mutations) {
 
-            // Solo actuamos si la pantalla es tamaño celular (menor a 768px)
+            // Solo actuamos si la pantalla es tama├▒o celular (menor a 768px)
             if (window.innerWidth <= 768) {
 
                 var tourContainer = document.querySelector('[data-flexitour="container"]');
                 if (tourContainer) {
-                    // Buscamos el título exacto del paso que queremos saltar
+                    // Buscamos el t├¡tulo exacto del paso que queremos saltar
                     var titulo = tourContainer.querySelector('.modal-title');
 
-                    // IMPORTANTE: El texto debe coincidir EXACTO con el título de tu paso
-                    if (titulo && titulo.innerText.includes('Enlaces a páginas')) {
+                    // IMPORTANTE: El texto debe coincidir EXACTO con el t├¡tulo de tu paso
+                    if (titulo && titulo.innerText.includes('Enlaces a p├íginas')) {
 
                         // 1. Hacemos la ventana totalmente invisible al instante para evitar el error visual
                         tourContainer.style.opacity = '0';
                         tourContainer.style.pointerEvents = 'none';
 
-                        // 2. Buscamos el botón de "Siguiente" y lo presionamos automáticamente
+                        // 2. Buscamos el bot├│n de "Siguiente" y lo presionamos autom├íticamente
                         var btnSiguiente = tourContainer.querySelector('[data-role="next"]');
                         if (btnSiguiente) {
                             btnSiguiente.click();
@@ -598,12 +584,15 @@
             }
         });
 
-        // Le decimos al observador que vigile toda la página
+        // Le decimos al observador que vigile toda la p├ígina
         observerTour.observe(document.body, { childList: true, subtree: true });
     });
 </script>
 
-<script>
+
+
+
+
     document.addEventListener("DOMContentLoaded", function () {
         // Solo actuar si estamos en la vista de un recurso
         if (!document.body.classList.contains('path-mod-resource')) return;
@@ -619,7 +608,7 @@
         var pdfUrl = pdfEmbed.src || pdfEmbed.data;
         if (!pdfUrl) return;
 
-        // Verificar que realmente sea un PDF (por extensión o por tipo de objeto)
+        // Verificar que realmente sea un PDF (por extensi├│n o por tipo de objeto)
         var isPdf = pdfUrl.toLowerCase().includes('.pdf') || (pdfEmbed.tagName.toLowerCase() === 'object' && pdfEmbed.getAttribute('type') === 'application/pdf');
         if (!isPdf) return;
 
@@ -633,14 +622,14 @@
             downloadUrl += (downloadUrl.includes('?') ? '&' : '?') + 'forcedownload=1';
         }
 
-        // Botón Descargar
+        // Bot├│n Descargar
         var btnDownload = document.createElement('a');
         btnDownload.href = downloadUrl;
         btnDownload.className = 'btn-custom-pdf';
         btnDownload.innerText = 'Descargar PDF';
         btnDownload.setAttribute('download', '');
 
-        // Botón Pantalla Completa
+        // Bot├│n Pantalla Completa
         var btnFullscreen = document.createElement('button');
         btnFullscreen.className = 'btn-custom-pdf';
         btnFullscreen.innerText = 'Pantalla completa';
@@ -653,48 +642,5 @@
 
         // Insertar los botones justo antes del visor del PDF
         resourceContent.parentNode.insertBefore(btnContainer, resourceContent);
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Auto-detectar ícono de submódulo en los banners (MMZ)
-        function autodetectarIconos() {
-            var icon1 = [1, 4, 7, 10];
-            var icon2 = [2, 5, 8, 11, 13, 15];
-            var icon3 = [3, 6, 9, 12, 14, 16];
-            
-            document.querySelectorAll('.banner-modulo').forEach(function(banner) {
-                var numEl = banner.querySelector('.banner-sub-num');
-                var iconEl = banner.querySelector('.banner-mod-icon');
-                
-                if (numEl && iconEl) {
-                    var text = numEl.textContent || '';
-                    
-                    // Limpiar clases previas por si acaso
-                    iconEl.className = iconEl.className.replace(/\bicono-sub-\d+\b/g, '').trim();
-                    
-                    // Detectar número del 1 al 16
-                    var match = text.match(/\b([1-9]|1[0-6])\b/);
-                    if (match) {
-                        var n = parseInt(match[1], 10);
-                        if (icon1.includes(n)) {
-                            iconEl.classList.add('icono-sub-1');
-                        } else if (icon2.includes(n)) {
-                            iconEl.classList.add('icono-sub-2');
-                        } else if (icon3.includes(n)) {
-                            iconEl.classList.add('icono-sub-3');
-                        }
-                    }
-                }
-            });
-        }
-        
-        // Ejecutar inmediatamente
-        autodetectarIconos();
-        
-        // Por si Moodle carga el banner dinámicamente o lo clonamos (ej. script de clonado a portada)
-        setTimeout(autodetectarIconos, 500);
-        setTimeout(autodetectarIconos, 1500);
     });
 </script>
