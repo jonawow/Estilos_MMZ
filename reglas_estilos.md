@@ -1,6 +1,6 @@
-# Guía y Reglas de Modificación de Estilos (Moodle 5.1)
+# Guía y Reglas de Modificación de Estilos (Moodle)
 
-Este documento sirve como registro de las reglas y lineamientos para los estilos de la nueva plataforma Moodle 5.1. Se actualizará conforme vayamos modificando y adaptando los estilos.
+Este documento sirve como recordatorio y conjunto de instrucciones para futuras modificaciones de código en los archivos CSS/SCSS y HTML de este proyecto.
 
 ## 1. Respetar el orden y las secciones existentes
 - **No añadir código al final del archivo de forma indiscriminada.** 
@@ -12,21 +12,19 @@ Este documento sirve como registro de las reglas y lineamientos para los estilos
 - Si se trata de un elemento de un plugin (como `local-accessibility-buttoncontainer`), es muy probable que ya se haya estilizado antes para adaptarlo al tema general.
 
 ## 3. Manejo de HTML Adicional
-- Cualquier inyección en el `html_adicional_conjunto.html` (o el archivo correspondiente) debe seguir la estructura semántica de lo que ya está construido.
+- Cualquier inyección en el `html_adicional_conjunto.html` debe seguir la estructura semántica de lo que ya está construido.
 - Evitar duplicar scripts o contenedores si ya existe una lógica que hace algo similar (por ejemplo, los observadores del DOM).
 
 ## 4. Impacto global vs local
 - Al realizar ajustes que pretenden arreglar una página específica (como el login), siempre aislar las reglas CSS usando el selector único de esa página (ej. `body.path-login`).
 - Evitar cambios en el layout base (`body`, `.row`, `.container`) que puedan repercutir en los cursos o el dashboard, a menos que sea estrictamente necesario.
 
-## 2. Banners de Módulos (MMZ)
+## 5. Lógica de Tematización de Aulas (Colores)
+El diseño de la plataforma maneja dos tipos de entornos principales que determinan la paleta de colores a utilizar:
+- **Aulas Normales (Módulos):** Existen 16 submódulos/módulos regulares. El tema asigna dinámicamente un color acorde al número del módulo mediante clases en el `body` (como `.M1-tema`, `.M5-tema`, etc.) y el uso de variables CSS exclusivas para cada uno (por ejemplo, `--pl-m{n}-primario`).
+- **Aula de Capacitación:** Este entorno es diferente e independiente. Tiene su propia identidad gráfica y paleta de colores, gobernada por la clase `.capacitacion-tema` y sus variables propias (`--cap-color-1`, etc.).
 
-Se ha implementado el nuevo diseño oficial para el **Aula Margarita Maza (MMZ)**. Toda la lógica antigua de 16 temas y el aula de capacitación ha sido eliminada por completo.
-
-La nueva arquitectura se basa en una sola clase contenedora `.banner-mmz` que no requiere variaciones de temas. Las estructuras y variables ahora son sólidas y directas.
-
-- El código HTML de referencia para el nuevo diseño del banner se encuentra en `html_adicional.html`.
-- Todo el bloque de diseño compacto y extendido, así como la personalización de los botones `Ordinario`/`Extraordinario` ha sido re-escrita con `flexbox` y `clip-path` optimizados en la Sección 10 de `estilos.css`.
+Cualquier cambio estructural o visual debe considerar siempre a qué tipo de aula afecta y respetar las variables de color predefinidas para no romper la dinámica visual.
 
 ---
-*Nota: Este archivo README se mantendrá actualizado para reflejar el estado actual de las reglas de diseño y desarrollo en el nuevo entorno de Moodle 5.1.*
+*Nota: Mantener este archivo presente al interactuar con asistentes de IA o nuevos desarrolladores para asegurar que el código no se desordene y crezca de forma estructurada.*

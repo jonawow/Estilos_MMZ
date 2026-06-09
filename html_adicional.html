@@ -227,7 +227,6 @@
 
             if (bloqueCapacitacionFisico) {
                 bannerParaClonar = bloqueCapacitacionFisico;
-                sessionStorage.setItem('tema_curso_' + idCurso, 'capacitacion');
             } else if (bloqueGrandeFisico) {
                 bannerParaClonar = bloqueGrandeFisico; // Elegimos el grande para mostrar en la portada
             }
@@ -235,19 +234,6 @@
             if (bloqueChicoFisico) {
                 // Guardamos el CHICO en la memoria en secreto para usarlo en los recursos
                 sessionStorage.setItem(keyMemoriaChico, bloqueChicoFisico.outerHTML);
-
-                // Detectar tema automáticamente desde las clases del banner físico
-                var matchTema = bloqueChicoFisico.className.match(/(M\d+-tema|capacitacion-tema)/);
-                if (matchTema) {
-                    sessionStorage.setItem('tema_curso_' + idCurso, matchTema[1]);
-                }
-            }
-
-            if (bloqueGrandeFisico) {
-                var matchTemaG = bloqueGrandeFisico.className.match(/(M\d+-tema|capacitacion-tema)/);
-                if (matchTemaG) {
-                    sessionStorage.setItem('tema_curso_' + idCurso, matchTemaG[1]);
-                }
             }
 
             // Escondemos TODOS los bloques del panel lateral (a menos que el profe esté editando)
@@ -277,40 +263,6 @@
                 var bannerFinal = bannerParaClonar.cloneNode(true);
                 bannerFinal.classList.add('banner-magico');
                 areaContenido.prepend(bannerFinal);
-            }
-        }
-    });
-</script>
-
-<script>
-    /* Detección automática de módulo/submódulo (1..16) o Capacitación por el título de la página.
-       Lee "M1 ", "M1:", "MÓDULO 1", "SUBMÓDULO 1" (con o sin acento) y agrega .M{n}-tema al body.
-       Para capacitación, busca "CAPACITACIÓN" o la variable de sessionStorage y agrega .capacitacion-tema al body. */
-    document.addEventListener('DOMContentLoaded', function () {
-        var titulo = document.title.toUpperCase();
-        var matchCurso = document.body.className.match(/course-(\d+)/);
-        var idCurso = matchCurso ? matchCurso[1] : null;
-        var temaGuardado = idCurso ? sessionStorage.getItem('tema_curso_' + idCurso) : null;
-
-        // 1. Detección por memoria (si el banner físico tenía la clase M1-tema o capacitacion-tema)
-        if (temaGuardado) {
-            if (temaGuardado === 'capacitacion') temaGuardado = 'capacitacion-tema'; // Retrocompatibilidad
-            document.body.classList.add(temaGuardado);
-            return; // Detenemos aquí, ya sabemos el tema exacto
-        }
-
-        // 2. Fallback: Detección por Título (capacitación o módulos)
-        if (titulo.match(/CAPACITACI[ÓO]N/)) {
-            document.body.classList.add('capacitacion-tema');
-            return;
-        }
-
-        // Detectar SM1, M1, MÓDULO 1, SUBMÓDULO 1
-        var match = titulo.match(/\bS?M(\d{1,2})(?=[\s:]|$)|\bM[ÓO]DULO\s+(\d{1,2})\b|\bSUBM[ÓO]DULO\s+(\d{1,2})\b/);
-        if (match) {
-            var n = parseInt(match[1] || match[2] || match[3], 10);
-            if (n >= 1 && n <= 16) {
-                document.body.classList.add('M' + n + '-tema');
             }
         }
     });
