@@ -4748,3 +4748,14 @@ s .mainPlantilla23 .interactivo:hover {
         text-align: left;
     }
 }
+
+/* Color naranja para iconos de actividades tipo examen (quiz) */
+.activity.modtype_quiz .activityicon {
+    /* brightness(0) lo vuelve negro puro primero, luego el resto de filtros lo transforman en naranja */
+    filter: brightness(0) saturate(100%) invert(48%) sepia(92%) saturate(1637%) hue-rotate(347deg) brightness(93%) contrast(90%) !important;
+}
+
+/* Ocultar fechas de apertura y cierre en las tarjetas de actividades */
+.activity-dates {
+    display: none !important;
+}
