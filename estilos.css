@@ -1022,11 +1022,11 @@ li.activity.label:has(.rango-semana-dinamico) {
         }
 
         /* Íconos SVG Personalizados (solo cambia esta clase en el HTML) */
-        
 
-        
 
-        
+
+
+
 
         .banner-mod-name {
             color: var(--mmz-p4);
@@ -1182,11 +1182,11 @@ li.activity.label:has(.rango-semana-dinamico) {
         }
 
         /* Íconos SVG Personalizados (misma lógica que banner grande) */
-        
 
-        
 
-        
+
+
+
     }
 
     /* Contenido Central */
@@ -4713,4 +4713,38 @@ s .mainPlantilla23 .interactivo:hover {
 .block_settings .tree_item::before,
 .path-admin .tree_item::before {
     flex-shrink: 0;
+}
+
+/* Tablas responsive en celulares (cards) */
+@media (max-width: 576px) {
+    .tabla-responsive-cards thead {
+        display: none;
+    }
+
+    .tabla-responsive-cards,
+    .tabla-responsive-cards tbody,
+    .tabla-responsive-cards tr,
+    .tabla-responsive-cards td {
+        display: block;
+        width: 100%;
+    }
+
+    .tabla-responsive-cards tr {
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+    }
+
+    .tabla-responsive-cards td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .tabla-responsive-cards td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: 700;
+        text-align: left;
+    }
 }
