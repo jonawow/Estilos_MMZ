@@ -4759,3 +4759,82 @@ s .mainPlantilla23 .interactivo:hover {
 .activity-dates {
     display: none !important;
 }
+
+/* ========================================================================= */
+/* MIGRACIÓN: Ajustes de Actividades (Grillas Flexbox y Filtros Azules)      */
+/* ========================================================================= */
+
+/* Ajustes de alineación y medidas para el contenedor del ícono y su línea de color */
+html body div.activity-item div.activity-grid div.activity-icon.activityiconcontainer.smaller {
+    height: 45px !important;           /* <-- LARGO DE LA LÍNEA (Altura) */
+    min-height: 45px !important;       /* <-- Mantenlo igual a height */
+    max-height: 45px !important;       /* <-- Mantenlo igual a height */
+    width: 40px !important;            /* <-- Ancho de la caja */
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 5px !important;       /* <-- SEPARACIÓN CON EL BORDE GRIS IZQUIERDO */
+    margin-right: 12px !important;     /* <-- Separación con el texto de la actividad */
+    align-self: center !important;     /* <-- Centrado vertical en la caja gris */
+    display: flex !important;
+    align-items: center !important;    /* <-- Centra el ícono adentro de la caja */
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;       /* <-- Candado: Evita que la línea de color se salga de los 45px */
+}
+
+/* AQUÍ CONTROLAS EL GROSOR Y REDONDEADO DE LA LÍNEA DE COLOR */
+html body div.activity-item div.activity-grid div.activity-icon.activityiconcontainer.smaller::before,
+html body div.activity-item div.activity-grid div.activity-icon.activityiconcontainer.smaller::after {
+    width: 2px !important;          /* <-- GROSOR DE LA LÍNEA */
+    border-radius: 4px !important;  /* <-- REDONDEADO DE LOS BORDES DE LA LÍNEA */
+    height: 100% !important;        /* <-- Respeta exactamente la altura del contenedor (45px) */
+    top: 0 !important;
+}
+
+/* Evitar el texto cortado y asegurar que el botón quepa */
+.activity-name-area {
+    margin-right: 0px !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: normal !important;
+}
+
+/* Forzar anclaje de la línea de color a la tarjeta completa y centrado de su contenido */
+.activity-item {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.activity-item .activity-grid {
+    flex-grow: 1 !important;
+    height: 100% !important;
+}
+
+/* Ajustes de medidas para la imagen del ícono */
+html body div.activity-item div.activity-grid div.activity-icon.activityiconcontainer.smaller img.activityicon {
+    height: 24px !important;
+    width: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+}
+
+/* Forzar que TODO el contenido (icono, texto, botón) quede perfectamente en la mitad de la caja gris, ignorando márgenes nativos que lo empujen abajo */
+.activity-grid > * {
+    align-self: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 20. COLOR GLOBAL DE ICONOS DE ACTIVIDAD (#0099ad) */
+/* Este filtro convierte cualquier color base en el azul especificado. */
+/* Usamos :not() para evitar que afecte a las Tareas (assign), Exámenes (quiz) y Cuestionarios (questionnaire) */
+li.activity:not(.assign):not(.questionnaire):not(.quiz) img.activityicon,
+li.activity:not(.assign):not(.questionnaire):not(.quiz) .activity-icon img,
+li.activity:not(.assign):not(.questionnaire):not(.quiz) .activityiconcontainer img {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(85%) saturate(3062%) hue-rotate(152deg) brightness(96%) contrast(101%) !important;
+}
