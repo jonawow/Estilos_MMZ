@@ -4732,20 +4732,27 @@ s .mainPlantilla23 .interactivo:hover {
     .tabla-responsive-cards tr {
         margin-bottom: 1rem;
         border: 1px solid #dee2e6;
+        border-radius: 6px;
+        overflow: hidden;
     }
 
     .tabla-responsive-cards td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
+        text-align: left;
+        padding: 0.6em 0.8em;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .tabla-responsive-cards td:last-child {
+        border-bottom: none;
     }
 
     .tabla-responsive-cards td::before {
         content: attr(data-label);
-        position: absolute;
-        left: 10px;
+        display: block;
         font-weight: 700;
-        text-align: left;
+        margin-bottom: 2px;
+        color: var(--prepa-neutral-oscuro, #333);
     }
 }
 
@@ -4766,29 +4773,41 @@ s .mainPlantilla23 .interactivo:hover {
 
 /* Ajustes de alineación y medidas para el contenedor del ícono y su línea de color */
 html body div.activity-item div.activity-grid div.activity-icon.activityiconcontainer.smaller {
-    height: 45px !important;           /* <-- LARGO DE LA LÍNEA (Altura) */
-    min-height: 45px !important;       /* <-- Mantenlo igual a height */
-    max-height: 45px !important;       /* <-- Mantenlo igual a height */
-    width: 40px !important;            /* <-- Ancho de la caja */
+    height: 45px !important;
+    /* <-- LARGO DE LA LÍNEA (Altura) */
+    min-height: 45px !important;
+    /* <-- Mantenlo igual a height */
+    max-height: 45px !important;
+    /* <-- Mantenlo igual a height */
+    width: 40px !important;
+    /* <-- Ancho de la caja */
     padding: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    margin-left: 5px !important;       /* <-- SEPARACIÓN CON EL BORDE GRIS IZQUIERDO */
-    margin-right: 12px !important;     /* <-- Separación con el texto de la actividad */
-    align-self: center !important;     /* <-- Centrado vertical en la caja gris */
+    margin-left: 5px !important;
+    /* <-- SEPARACIÓN CON EL BORDE GRIS IZQUIERDO */
+    margin-right: 12px !important;
+    /* <-- Separación con el texto de la actividad */
+    align-self: center !important;
+    /* <-- Centrado vertical en la caja gris */
     display: flex !important;
-    align-items: center !important;    /* <-- Centra el ícono adentro de la caja */
+    align-items: center !important;
+    /* <-- Centra el ícono adentro de la caja */
     justify-content: center !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;       /* <-- Candado: Evita que la línea de color se salga de los 45px */
+    overflow: hidden !important;
+    /* <-- Candado: Evita que la línea de color se salga de los 45px */
 }
 
 /* AQUÍ CONTROLAS EL GROSOR Y REDONDEADO DE LA LÍNEA DE COLOR */
 html body div.activity-item div.activity-grid div.activity-icon.activityiconcontainer.smaller::before,
 html body div.activity-item div.activity-grid div.activity-icon.activityiconcontainer.smaller::after {
-    width: 2px !important;          /* <-- GROSOR DE LA LÍNEA */
-    border-radius: 4px !important;  /* <-- REDONDEADO DE LOS BORDES DE LA LÍNEA */
-    height: 100% !important;        /* <-- Respeta exactamente la altura del contenedor (45px) */
+    width: 2px !important;
+    /* <-- GROSOR DE LA LÍNEA */
+    border-radius: 4px !important;
+    /* <-- REDONDEADO DE LOS BORDES DE LA LÍNEA */
+    height: 100% !important;
+    /* <-- Respeta exactamente la altura del contenedor (45px) */
     top: 0 !important;
 }
 
@@ -4807,6 +4826,7 @@ html body div.activity-item div.activity-grid div.activity-icon.activityiconcont
     display: flex !important;
     flex-direction: column !important;
 }
+
 .activity-item .activity-grid {
     flex-grow: 1 !important;
     height: 100% !important;
@@ -4824,7 +4844,7 @@ html body div.activity-item div.activity-grid div.activity-icon.activityiconcont
 }
 
 /* Forzar que TODO el contenido (icono, texto, botón) quede perfectamente en la mitad de la caja gris, ignorando márgenes nativos que lo empujen abajo */
-.activity-grid > * {
+.activity-grid>* {
     align-self: center !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
