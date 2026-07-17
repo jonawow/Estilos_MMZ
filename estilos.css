@@ -663,7 +663,8 @@ li.activity {
 
 .activity.assign,
 .activity.questionnaire,
-.activity.quiz {
+.activity.quiz,
+.activity.forum {
     flex: 1 1 calc(33.333% - 6px);
     max-width: calc(33.333% - 6px);
     min-width: 0;
@@ -675,14 +676,16 @@ li.activity {
 
 .activity.assign .activity-item,
 .activity.questionnaire .activity-item,
-.activity.quiz .activity-item {
+.activity.quiz .activity-item,
+.activity.forum .activity-item {
     min-height: 100%;
     height: auto;
 }
 
 .activity.assign .activity-grid,
 .activity.questionnaire .activity-grid,
-.activity.quiz .activity-grid {
+.activity.quiz .activity-grid,
+.activity.forum .activity-grid {
     padding: 0;
     min-height: 100%;
     height: auto;
@@ -696,7 +699,8 @@ li.activity {
 
 .activity.assign .activity-icon.activityiconcontainer.smaller,
 .activity.questionnaire .activity-icon.activityiconcontainer.smaller,
-.activity.quiz .activity-icon.activityiconcontainer.smaller {
+.activity.quiz .activity-icon.activityiconcontainer.smaller,
+.activity.forum .activity-icon.activityiconcontainer.smaller {
     height: calc(100% - 10px);
     aspect-ratio: 1 / 1;
     min-width: 40px;
@@ -710,7 +714,8 @@ li.activity {
 
 .activity.assign .activity-icon.activityiconcontainer.smaller img,
 .activity.questionnaire .activity-icon.activityiconcontainer.smaller img,
-.activity.quiz .activity-icon.activityiconcontainer.smaller img {
+.activity.quiz .activity-icon.activityiconcontainer.smaller img,
+.activity.forum .activity-icon.activityiconcontainer.smaller img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -718,7 +723,8 @@ li.activity {
 
 .activity.assign .activity-icon.activityiconcontainer.smaller::after,
 .activity.questionnaire .activity-icon.activityiconcontainer.smaller::after,
-.activity.quiz .activity-icon.activityiconcontainer.smaller::after {
+.activity.quiz .activity-icon.activityiconcontainer.smaller::after,
+.activity.forum .activity-icon.activityiconcontainer.smaller::after {
     content: '';
     display: block;
     width: 4px;
@@ -749,6 +755,15 @@ li.activity {
     border-radius: 15px;
 }
 
+.activity.forum .activity-icon.activityiconcontainer.smaller::after {
+    background: #0099ad;
+}
+
+.activity.forum .activity-item:has(a:hover) .activity-grid {
+    background-color: #0099ad2d;
+    border-radius: 15px;
+}
+
 .activity-completion button.btn-subtle-success {
     background: var(--pl-exito-light);
     border: solid;
@@ -759,7 +774,8 @@ li.activity {
 
 .activity.assign .activity-icon img.activityicon,
 .activity.questionnaire .activity-icon img.activityicon,
-.activity.quiz .activity-icon img.activityicon {
+.activity.quiz .activity-icon img.activityicon,
+.activity.forum .activity-icon img.activityicon {
     max-width: 24px !important;
     max-height: 24px !important;
     width: auto !important;
@@ -4724,8 +4740,20 @@ s .mainPlantilla23 .interactivo:hover {
     flex-shrink: 0;
 }
 
+/* ==========================================
+// FIX: Tablas con encabezado coloreado 
+// ========================================== */
+.bg-neutral-claro-50+.tabla-responsive-cards {
+    border: 1px solid #000 !important;
+}
+
 /* Tablas responsive en celulares (cards) */
 @media (max-width: 576px) {
+    /* Quitar el border negro de la tabla entera en celular para que las tarjetas (tr) se distingan */
+    .bg-neutral-claro-50+.tabla-responsive-cards {
+        border: none !important;
+    }
+
     .tabla-responsive-cards thead {
         display: none;
     }
@@ -4733,16 +4761,20 @@ s .mainPlantilla23 .interactivo:hover {
     .tabla-responsive-cards,
     .tabla-responsive-cards tbody,
     .tabla-responsive-cards tr,
+    .tabla-responsive-cards th,
     .tabla-responsive-cards td {
         display: block;
         width: 100%;
+        box-sizing: border-box;
     }
 
     .tabla-responsive-cards tr {
-        margin-bottom: 1rem;
-        border: 1px solid #dee2e6;
-        border-radius: 6px;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.15); /* Borde un poco más definido */
+        border-radius: 8px;
         overflow: hidden;
+        background-color: transparent !important;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* Sombra más fuerte para que resalte la tarjeta */
     }
 
     .tabla-responsive-cards td {
@@ -4750,6 +4782,10 @@ s .mainPlantilla23 .interactivo:hover {
         padding: 0.6em 0.8em;
         border: none;
         border-bottom: 1px solid #eee;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        min-width: 0 !important;
+        /* Anula el min-width: 200px de la plantilla principal */
     }
 
     .tabla-responsive-cards td:last-child {
@@ -4760,9 +4796,71 @@ s .mainPlantilla23 .interactivo:hover {
         content: attr(data-label);
         display: block;
         font-weight: 700;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
         color: var(--prepa-neutral-oscuro, #333);
     }
+
+    /* ==========================================
+    // FIX: Reducción de espacios laterales en Moodle (Celular)
+    // ========================================== */
+    #page,
+    .main-inner,
+    #page-content,
+    #region-main-box,
+    #region-main {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Las cabeceras de actividad (títulos) ocupan todo el ancho pero les damos un respiro */
+    .activity-header {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* El contenedor de la descripción (donde va la plantilla) se limpia para que Bootstrap haga su magia */
+    .activity-description,
+    .activity-information {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .box.py-3.generalbox {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .mainPlantilla23 .card-body {
+        padding: 10px !important;
+    }
+
+    .mainPlantilla23 .col-10.mx-auto,
+    .mainPlantilla23 .col-sm-12,
+    .mainPlantilla23 .col-12 {
+        flex: 0 0 100% !important; 
+        max-width: 100% !important;
+        /* Se omiten margin/padding a 0 para no romper el grid de Bootstrap */
+    }
+
+    .mainPlantilla23 ol.estiloLista,
+    .mainPlantilla23 ul {
+        padding-left: 1.2rem !important;
+    }
+}
+
+/* ==========================================
+// FIX: Eliminación de espacios laterales en todas las actividades (Desktop y Celular)
+// ========================================== */
+body[class*="path-mod-"] #region-main,
+body[class*="path-mod-"] .main-inner,
+body[class*="path-mod-"] #region-main-box,
+body[class*="path-mod-"] #page-content {
+    max-width: 100% !important;
+    width: 100% !important;
 }
 
 /* Color naranja para iconos de actividades tipo examen (quiz) */
