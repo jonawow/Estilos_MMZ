@@ -585,6 +585,210 @@ div.login-divider {
     border-top: 1px solid var(--general-blanco) !important;
 }
 
+/* Footer Gobierno (Solo Login) */
+.gov-footer-login {
+    display: none !important;
+}
+
+body.path-login .gov-footer-login,
+body.pagelayout-login .gov-footer-login,
+#page-login-index .gov-footer-login {
+    display: block !important;
+    background-color: #5c2134; /* Guinda institucional gob.mx */
+    color: #ffffff;
+    padding: 15px 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body.path-login .gov-footer-login a,
+body.pagelayout-login .gov-footer-login a,
+#page-login-index .gov-footer-login a,
+body.path-login .gov-footer-login a.footer,
+body.pagelayout-login .gov-footer-login a.footer,
+#page-login-index .gov-footer-login a.footer {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+body.path-login .gov-footer-login a:hover,
+body.pagelayout-login .gov-footer-login a:hover,
+#page-login-index .gov-footer-login a:hover {
+    text-decoration: underline;
+}
+
+body.path-login .gov-footer-login ul.nav-list,
+body.pagelayout-login .gov-footer-login ul.nav-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+body.path-login .gov-footer-login ul.nav-list li,
+body.pagelayout-login .gov-footer-login ul.nav-list li {
+    margin-bottom: 5px;
+}
+
+/* Ocultar checkboxes del acordeón en el footer */
+body.path-login .gov-footer-login .accordion-toggle,
+body.pagelayout-login .gov-footer-login .accordion-toggle,
+#page-login-index .gov-footer-login .accordion-toggle {
+    display: none;
+}
+
+body.path-login .gov-footer-login h5,
+body.pagelayout-login .gov-footer-login h5,
+#page-login-index .gov-footer-login h5 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Evitar scroll horizontal quitando margenes negativos de la fila */
+body.path-login .gov-footer-login .row,
+body.pagelayout-login .gov-footer-login .row,
+#page-login-index .gov-footer-login .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+body.path-login .gov-footer-login p,
+body.pagelayout-login .gov-footer-login p,
+#page-login-index .gov-footer-login p {
+    margin-bottom: 10px;
+}
+
+/* Forzar íconos sociales a estar en horizontal */
+body.path-login .gov-footer-login ul.list-inline.social-media,
+body.pagelayout-login .gov-footer-login ul.list-inline.social-media,
+#page-login-index .gov-footer-login ul.list-inline.social-media {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+body.path-login .gov-footer-login ul.list-inline.social-media li,
+body.pagelayout-login .gov-footer-login ul.list-inline.social-media li {
+    list-style: none;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+body.path-login .gov-footer-login ul.list-inline.social-media li img,
+body.pagelayout-login .gov-footer-login ul.list-inline.social-media li img {
+    max-width: 25px;
+}
+
+body.path-login .gov-footer-login .logo-079,
+body.pagelayout-login .gov-footer-login .logo-079,
+#page-login-index .gov-footer-login .logo-079 {
+    margin-top: 5px;
+}
+body.path-login .gov-footer-login .logo-079 img,
+body.pagelayout-login .gov-footer-login .logo-079 img,
+#page-login-index .gov-footer-login .logo-079 img {
+    max-height: 45px;
+}
+
+/* Ocultar footer gris anterior SOLO en login */
+body.path-login .mi-nuevo-footer,
+body.pagelayout-login .mi-nuevo-footer,
+#page-login-index .mi-nuevo-footer {
+    display: none !important;
+}
+
+/* Header Gobierno (Solo Login) */
+.gov-header-login {
+    display: none !important;
+}
+
+body.path-login .gov-header-login,
+body.pagelayout-login .gov-header-login,
+#page-login-index .gov-header-login {
+    display: block !important;
+    z-index: 9999;
+}
+
+body.path-login .gov-header-login .navbar,
+body.pagelayout-login .gov-header-login .navbar,
+#page-login-index .gov-header-login .navbar {
+    background-color: #5c2134 !important; /* Guinda institucional gob.mx */
+}
+
+html {
+    overflow-x: hidden !important;
+}
+
+body.path-login .gov-header-login .nav-link,
+body.pagelayout-login .gov-header-login .nav-link,
+#page-login-index .gov-header-login .nav-link {
+    color: #ffffff !important;
+    font-size: 14px;
+    padding: 10px 15px;
+}
+
+body.path-login .gov-header-login .nav-link:hover,
+body.pagelayout-login .gov-header-login .nav-link:hover,
+#page-login-index .gov-header-login .nav-link:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   AJUSTE RESPONSIVO PARA EVITAR SCROLL VERTICAL
+   ========================================= */
+body.path-login,
+body.pagelayout-login,
+#page-login-index {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+    margin: 0;
+}
+
+body.path-login #page-wrapper,
+body.pagelayout-login #page-wrapper,
+#page-login-index #page-wrapper {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+body.path-login #page,
+body.pagelayout-login #page,
+#page-login-index #page {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-top: 0 !important; 
+    margin-top: 0 !important;
+}
+
+body.path-login #page-content,
+body.pagelayout-login #page-content,
+#page-login-index #page-content,
+body.path-login #region-main-box,
+body.pagelayout-login #region-main-box,
+#page-login-index #region-main-box,
+body.path-login #region-main,
+body.pagelayout-login #region-main,
+#page-login-index #region-main {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+body.path-login .login-wrapper,
+body.pagelayout-login .login-wrapper,
+#page-login-index .login-wrapper {
+    flex: 1 !important;
+    min-height: 0 !important; /* Quita el 100vh forzado de Moove */
+}
+
+
+
 // ----------------------------------------------------------------------------
 //  7. VISIBILIDAD DE ENCABEZADOS Y DESCRIPCIONES
 // ----------------------------------------------------------------------------
