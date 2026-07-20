@@ -3210,6 +3210,32 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     }
 }
 
+// ----------------------------------------------------------------------------
+//  AJUSTES PARA LIBERAR EL ANCHO DE RECURSOS (Descripciones y Micrositios)
+// ----------------------------------------------------------------------------
+/* 1. Liberamos la caja contenedora de Moodle (Rompe el "limitedwidth") */
+body #page-content #region-main-box #region-main .activity-header,
+body #page-content #region-main-box #region-main .activity-description,
+body #page-content #region-main-box #region-main #intro,
+body #page-content #region-main-box #region-main .no-overflow,
+body #page-content #region-main-box #region-main .box.generalbox {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* 2. Liberamos la plantilla interna (Quita restricciones del container-fluid de Bootstrap) */
+body #page-content #region-main-box #region-main .activity-description .container-fluid,
+body #page-content #region-main-box #region-main .activity-description .mainPlantilla23 {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 //  Contenedor de Accesibilidad — forzar posición fija inferior
 .local-accessibility-buttoncontainer {
     position: fixed !important;
