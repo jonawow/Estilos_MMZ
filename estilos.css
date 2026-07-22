@@ -676,7 +676,7 @@ div.login-divider {
         max-width: 100%;
         margin-bottom: 15px;
     }
-    
+
     /* Acordeón para móvil en el footer guinda */
     .gov-footer-login .gob-accordion label {
         display: flex;
@@ -687,7 +687,7 @@ div.login-divider {
         padding: 0;
         margin: 0;
     }
-    
+
     .gov-footer-login h5 {
         font-size: 14px !important;
     }
@@ -703,13 +703,15 @@ div.login-divider {
         height: 8px;
         border-right: 2px solid white;
         border-bottom: 2px solid white;
-        transform: rotate(-45deg); /* Flecha apuntando a la derecha */
+        transform: rotate(-45deg);
+        /* Flecha apuntando a la derecha */
         transition: transform 0.3s ease;
         margin-right: 5px;
     }
 
-    .gov-footer-login .gob-accordion input.accordion-toggle:checked + label::after {
-        transform: rotate(45deg); /* Flecha apuntando hacia abajo */
+    .gov-footer-login .gob-accordion input.accordion-toggle:checked+label::after {
+        transform: rotate(45deg);
+        /* Flecha apuntando hacia abajo */
     }
 
     .gov-footer-login .gob-accordion .gob-section {
@@ -721,8 +723,9 @@ div.login-divider {
         transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease-in-out;
     }
 
-    .gov-footer-login .gob-accordion input.accordion-toggle:checked ~ .gob-section {
-        max-height: 500px; /* Suficiente para el contenido */
+    .gov-footer-login .gob-accordion input.accordion-toggle:checked~.gob-section {
+        max-height: 500px;
+        /* Suficiente para el contenido */
         opacity: 1;
         padding-top: 5px;
         padding-bottom: 15px;
@@ -799,7 +802,8 @@ div.login-divider {
 }
 
 .gov-footer-login .logo-079 img {
-    max-height: 45px; /* Aumentar para que el texto de la imagen se vea más grande */
+    max-height: 45px;
+    /* Aumentar para que el texto de la imagen se vea más grande */
 }
 
 /* Ocultar footer gris anterior SOLO en login (Comentado para que se vean juntos) */
@@ -5618,4 +5622,11 @@ li.activity:not(.assign):not(.questionnaire):not(.quiz) .activityiconcontainer i
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+/* Ajuste para que el índice del curso (drawer izquierdo) */
+@media (max-width: 768px) {
+    .drawer-left .drawercontent {
+        padding-top: 60px !important;
+    }
 }
