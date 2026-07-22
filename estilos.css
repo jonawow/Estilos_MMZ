@@ -585,122 +585,231 @@ div.login-divider {
     border-top: 1px solid var(--general-blanco) !important;
 }
 
-/* Footer Gobierno (Solo Login) */
-.gov-footer-login {
-    display: none !important;
+/* Footer Unificado (Ambos Footers en uno solo) */
+.footer-unificado {
+    width: 100%;
+    display: block !important;
+    position: relative;
+    z-index: 100;
 }
 
-body.path-login .gov-footer-login,
-body.pagelayout-login .gov-footer-login,
-#page-login-index .gov-footer-login {
+/* Footer Gobierno (Parte Guinda) */
+.gov-footer-login {
     display: block !important;
     background-color: #5c2134;
     /* Guinda institucional gob.mx */
     color: #ffffff;
-    padding: 15px 0;
+    padding: 10px 0 5px 0;
+    /* Menos padding abajo para eliminar espacio vacío */
     width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
+    /* Clearfix alternativo */
+    font-size: 12px;
 }
 
-body.path-login .gov-footer-login a,
-body.pagelayout-login .gov-footer-login a,
-#page-login-index .gov-footer-login a,
-body.path-login .gov-footer-login a.footer,
-body.pagelayout-login .gov-footer-login a.footer,
-#page-login-index .gov-footer-login a.footer {
+/* Quitar márgenes inferiores nativos de Moodle para colapsar espacio sobrante */
+.gov-footer-login p,
+.gov-footer-login ul,
+.gov-footer-login h5,
+.gov-footer-login .nav-list {
+    margin-bottom: 5px !important;
+}
+
+.gov-footer-login .gob-col:last-child ul.list-inline {
+    margin-bottom: 0 !important;
+}
+
+/* Grilla custom (Reemplazo de Bootstrap para evitar que Moodle lo oculte) */
+.gob-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.gob-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: -15px;
+    margin-left: -15px;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.gob-col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 25%;
+    max-width: 25%;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.gob-section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+}
+
+.gov-footer-login .social-media-title {
+    display: inline-block;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .gob-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    /* Acordeón para móvil en el footer guinda */
+    .gov-footer-login .gob-accordion label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .gov-footer-login h5 {
+        font-size: 14px !important;
+    }
+
+    .gov-footer-login .gob-accordion label h5 {
+        margin: 0 !important;
+    }
+
+    .gov-footer-login .gob-accordion label::after {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        transform: rotate(-45deg); /* Flecha apuntando a la derecha */
+        transition: transform 0.3s ease;
+        margin-right: 5px;
+    }
+
+    .gov-footer-login .gob-accordion input.accordion-toggle:checked + label::after {
+        transform: rotate(45deg); /* Flecha apuntando hacia abajo */
+    }
+
+    .gov-footer-login .gob-accordion .gob-section {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease-in-out;
+    }
+
+    .gov-footer-login .gob-accordion input.accordion-toggle:checked ~ .gob-section {
+        max-height: 500px; /* Suficiente para el contenido */
+        opacity: 1;
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+}
+
+.gov-footer-login a,
+.gov-footer-login a.footer {
     color: #ffffff;
     text-decoration: none;
 }
 
-body.path-login .gov-footer-login a:hover,
-body.pagelayout-login .gov-footer-login a:hover,
-#page-login-index .gov-footer-login a:hover {
+.gov-footer-login a:hover {
     text-decoration: underline;
 }
 
-body.path-login .gov-footer-login ul.nav-list,
-body.pagelayout-login .gov-footer-login ul.nav-list {
+.gov-footer-login ul.nav-list {
     list-style: none;
     padding: 0;
     margin-bottom: 0;
 }
 
-body.path-login .gov-footer-login ul.nav-list li,
-body.pagelayout-login .gov-footer-login ul.nav-list li {
-    margin-bottom: 5px;
+.gov-footer-login ul.nav-list li {
+    margin-bottom: 2px;
 }
 
 /* Ocultar checkboxes del acordeón en el footer */
-body.path-login .gov-footer-login .accordion-toggle,
-body.pagelayout-login .gov-footer-login .accordion-toggle,
-#page-login-index .gov-footer-login .accordion-toggle {
+.gov-footer-login .accordion-toggle {
     display: none;
 }
 
-body.path-login .gov-footer-login h5,
-body.pagelayout-login .gov-footer-login h5,
-#page-login-index .gov-footer-login h5 {
+.gov-footer-login h5 {
     color: #ffffff;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
+    font-size: 12px;
 }
 
 /* Evitar scroll horizontal quitando margenes negativos de la fila */
-body.path-login .gov-footer-login .row,
-body.pagelayout-login .gov-footer-login .row,
-#page-login-index .gov-footer-login .row {
+.gov-footer-login .row {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
-body.path-login .gov-footer-login p,
-body.pagelayout-login .gov-footer-login p,
-#page-login-index .gov-footer-login p {
-    margin-bottom: 10px;
+.gov-footer-login p {
+    margin-bottom: 2px;
+    line-height: 1.2;
 }
 
 /* Forzar íconos sociales a estar en horizontal */
-body.path-login .gov-footer-login ul.list-inline.social-media,
-body.pagelayout-login .gov-footer-login ul.list-inline.social-media,
-#page-login-index .gov-footer-login ul.list-inline.social-media {
-    display: flex;
+.gov-footer-login ul.list-inline.social-media {
+    display: inline-flex;
     flex-wrap: wrap;
     padding: 0;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 2px;
     align-items: center;
+    vertical-align: middle;
 }
 
-body.path-login .gov-footer-login ul.list-inline.social-media li,
-body.pagelayout-login .gov-footer-login ul.list-inline.social-media li {
+.gov-footer-login ul.list-inline.social-media li {
     list-style: none;
     margin-right: 10px;
     margin-bottom: 0;
 }
 
-body.path-login .gov-footer-login ul.list-inline.social-media li img,
-body.pagelayout-login .gov-footer-login ul.list-inline.social-media li img {
+.gov-footer-login ul.list-inline.social-media li img {
     max-width: 25px;
 }
 
-body.path-login .gov-footer-login .logo-079,
-body.pagelayout-login .gov-footer-login .logo-079,
-#page-login-index .gov-footer-login .logo-079 {
-    margin-top: 5px;
+.gov-footer-login .logo-079 {
+    margin-top: 20px;
+    display: block;
 }
 
-body.path-login .gov-footer-login .logo-079 img,
-body.pagelayout-login .gov-footer-login .logo-079 img,
-#page-login-index .gov-footer-login .logo-079 img {
-    max-height: 45px;
+.gov-footer-login .logo-079 img {
+    max-height: 45px; /* Aumentar para que el texto de la imagen se vea más grande */
 }
 
-/* Ocultar footer gris anterior SOLO en login */
+/* Ocultar footer gris anterior SOLO en login (Comentado para que se vean juntos) */
+/* 
 body.path-login .mi-nuevo-footer,
 body.pagelayout-login .mi-nuevo-footer,
 #page-login-index .mi-nuevo-footer {
     display: none !important;
-}
+} 
+*/
 
 /* Header Gobierno (Solo Login) */
 .gov-header-login {
@@ -1939,10 +2048,11 @@ a.btn-mesa-servicio-custom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bs-gray);
-    color: var(--general-blanco);
-    padding: 15px 50px;
+    background-color: var(--general-blanco);
+    color: var(--general-guinda);
+    padding: 5px 50px;
     font-family: sans-serif;
+    border-top: 2px solid var(--general-gris-hover);
 }
 
 .footer-columna {
@@ -1958,13 +2068,15 @@ a.btn-mesa-servicio-custom {
     display: block;
     width: 100px;
     height: auto;
-    content: url([[pix:theme|logo_blanco]]);
+    content: url([[pix:theme|logo]]);
     object-fit: contain;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 5px auto;
 }
 
 .footer-info p {
     margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.2;
 }
 
 //  Columna 2: Redes sociales
@@ -1973,8 +2085,8 @@ a.btn-mesa-servicio-custom {
 }
 
 .texto-siguenos {
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 11px;
+    margin-bottom: 2px;
 }
 
 .redes-sep {
@@ -1987,19 +2099,21 @@ a.btn-mesa-servicio-custom {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    background-color: var(--general-blanco-transparente);
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    background-color: var(--general-blanco);
+    border: 1px solid var(--general-guinda);
     border-radius: 50%;
-    color: var(--general-blanco);
+    color: var(--general-guinda);
     text-decoration: none;
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: var(--general-blanco-transparente-hover);
+        background-color: var(--general-guinda);
+        color: var(--general-blanco);
         transform: translateY(-4px) scale(1.05);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 15px rgba(109, 26, 62, 0.2);
     }
 }
 
@@ -2014,21 +2128,22 @@ a.btn-mesa-servicio-custom {
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 5px;
     }
 
     a {
-        color: var(--general-blanco);
+        color: var(--general-guinda);
         text-decoration: none;
-        font-size: 14px;
+        font-size: 11px;
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 8px;
         transition: transform 0.2s ease, opacity 0.2s ease;
 
         &:hover {
             transform: translateX(5px);
             opacity: 0.8;
+            color: var(--general-guinda-hover);
         }
 
         &:focus,
@@ -2040,8 +2155,8 @@ a.btn-mesa-servicio-custom {
     }
 
     i {
-        font-size: 26px;
-        width: 35px;
+        font-size: 16px;
+        width: 20px;
         text-align: center;
     }
 }
@@ -2156,8 +2271,8 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     .mi-nuevo-footer {
         flex-direction: column;
         text-align: center;
-        padding: 40px 20px;
-        gap: 30px;
+        padding: 20px 20px;
+        gap: 15px;
     }
 
     .footer-columna {
@@ -2243,6 +2358,14 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
     padding: 0 !important;
     margin: 0 !important;
     min-height: 0 !important;
+}
+
+// Reducir la altura del contenido interno del footer guinda
+#page-footer p,
+#page-footer ul,
+#page-footer .footer-section {
+    margin-bottom: 5px !important;
+    padding-bottom: 0 !important;
 }
 
 //  .footer-popover en Moove es fixed/sticky y reserva espacio aunque esté vacío.
@@ -3212,6 +3335,32 @@ body:not(:has([data-action="toggle-editmode"])) .secondary-navigation [data-key=
             color: #6b4c8b !important;
         }
     }
+}
+
+// ----------------------------------------------------------------------------
+//  AJUSTES PARA LIBERAR EL ANCHO DE RECURSOS (Descripciones y Micrositios)
+// ----------------------------------------------------------------------------
+/* 1. Liberamos la caja contenedora de Moodle (Rompe el "limitedwidth") */
+body #page-content #region-main-box #region-main .activity-header,
+body #page-content #region-main-box #region-main .activity-description,
+body #page-content #region-main-box #region-main #intro,
+body #page-content #region-main-box #region-main .no-overflow,
+body #page-content #region-main-box #region-main .box.generalbox {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* 2. Liberamos la plantilla interna (Quita restricciones del container-fluid de Bootstrap) */
+body #page-content #region-main-box #region-main .activity-description .container-fluid,
+body #page-content #region-main-box #region-main .activity-description .mainPlantilla23 {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 //  Contenedor de Accesibilidad — forzar posición fija inferior
