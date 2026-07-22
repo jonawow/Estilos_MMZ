@@ -5176,3 +5176,297 @@ li.activity:not(.assign):not(.questionnaire):not(.quiz) .activity-icon img,
 li.activity:not(.assign):not(.questionnaire):not(.quiz) .activityiconcontainer img {
     filter: brightness(0) saturate(100%) invert(42%) sepia(85%) saturate(3062%) hue-rotate(152deg) brightness(96%) contrast(101%) !important;
 }
+
+/* ==========================================
+   FIX: Estilos equivalentes para micrositios
+   ========================================== */
+
+.ms-convertido .bg-primary.opacity-50 {
+    background-color: rgba(var(--primary-40-rgb), 0.50) !important;
+}
+
+.ms-convertido .bg-primary.opacity-10 {
+    background-color: rgba(var(--primary-40-rgb), 0.10) !important;
+}
+
+.ms-convertido .accordion-button:hover {
+    background-color: var(--primary-40) !important;
+    color: white !important;
+}
+
+.ms-convertido a {
+    color: blue !important;
+    font-family: "Atkinson Hyperlegible", Roboto, Helvetica, sans-serif !important;
+    text-decoration-color: initial !important;
+    text-decoration-line: underline !important;
+    text-decoration-style: initial !important;
+    text-decoration-thickness: initial !important;
+}
+
+.ms-convertido .btn-primary:focus,
+.ms-convertido .btn-primary.focus {
+    box-shadow: 0 0 0 .2rem rgba(var(--primary-40-rgb), 0.5) !important;
+}
+
+.ms-convertido .btn-primary:not(:disabled):not(.disabled):active:focus,
+.ms-convertido .btn-primary:not(:disabled):not(.disabled).active:focus,
+.ms-convertido .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(var(--primary-40-rgb), 0.5) !important;
+}
+
+.ms-convertido .btn-outline-primary:focus,
+.ms-convertido .btn-outline-primary.focus {
+    box-shadow: 0 0 0 .2rem rgba(var(--primary-40-rgb), 0.5) !important;
+}
+
+.ms-convertido input[type="text"],
+.ms-convertido textarea .text {
+    background-attachment: initial !important;
+    background-clip: initial !important;
+    background-color: rgb(255, 255, 255) !important;
+    background-image: initial !important;
+    background-origin: initial !important;
+    background-position-x: initial !important;
+    background-position-y: initial !important;
+    background-repeat: initial !important;
+    background-size: initial !important;
+    border-bottom-color: rgb(0, 0, 0) !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 2px !important;
+    border-image-outset: 0 !important;
+    border-image-repeat: stretch !important;
+    border-image-slice: 100% !important;
+    border-image-source: none !important;
+    border-image-width: 1 !important;
+    border-left-color: rgb(0, 0, 0) !important;
+    border-left-style: solid !important;
+    border-left-width: 2px !important;
+    border-right-color: rgb(0, 0, 0) !important;
+    border-right-style: solid !important;
+    border-right-width: 2px !important;
+    border-top-color: rgb(0, 0, 0) !important;
+    border-top-style: solid !important;
+    border-top-width: 2px !important;
+    color: rgb(38, 38, 38) !important;
+    font-size: 1.2rem !important;
+    font-weight: 300 !important;
+    margin-bottom: 0.25rem !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 0.25rem !important;
+}
+
+.ms-convertido textarea {
+    background-color: rgb(255, 255, 255) !important;
+    border-bottom-color: transparent !important;
+    border-bottom-left-radius: 0.2rem !important;
+    border-bottom-right-radius: 0.2rem !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 0.3rem !important;
+    border-image-outset: 0 !important;
+    border-image-repeat: stretch !important;
+    border-image-slice: 100% !important;
+    border-image-source: none !important;
+    border-image-width: 1 !important;
+    border-left-color: rgb(0, 119, 255) !important;
+    border-left-style: none !important;
+    border-left-width: medium !important;
+    border-right-color: rgb(0, 119, 255) !important;
+    border-right-style: none !important;
+    border-right-width: medium !important;
+    border-top-color: rgb(0, 119, 255) !important;
+    border-top-left-radius: 0.2rem !important;
+    border-top-right-radius: 0.2rem !important;
+    border-top-style: none !important;
+    border-top-width: medium !important;
+    color: rgb(51, 51, 51) !important;
+    display: block !important;
+    font-size: 1.2rem !important;
+    min-height: 100px !important;
+    min-width: 100px !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-top: 0.5rem !important;
+    resize: none !important;
+    visibility: visible !important;
+    width: 500px !important;
+}
+
+.ms-convertido .table-responsive .container-fluid.rounded-top p {
+    font-weight: bold !important;
+    text-align: center !important;
+}
+
+/* -- Estilos del micrositio que no tenia la hoja -- */
+.ms-convertido .MM .bg-resalte-10 {
+    background-color: var(--prepa-resalteMM-10) !important;
+}
+
+.ms-convertido .MM .bg-resalte-30 {
+    background-color: var(--prepa-resalteMM-30) !important;
+}
+
+.ms-convertido .bloque {
+    padding-bottom: 8px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 8px !important;
+}
+
+.ms-convertido .texto-titulo {
+    min-height: 50px !important;
+}
+
+.ms-convertido .espacio-fino {
+    letter-spacing: 0.09em !important;
+}
+
+@media (min-width: 577px) and (max-width: 1200px) {
+
+    .ms-convertido .table-responsive table td,
+    .ms-convertido .table-responsive table th {
+        min-width: 0 !important;
+    }
+
+    .ms-convertido .table-responsive table {
+        width: 100% !important;
+    }
+}
+
+.ms-convertido .btn-secondary {
+    background-color: rgb(108, 117, 125) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.ms-convertido .btn-secondary:hover {
+    background-color: rgb(92, 99, 106) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.ms-convertido .btn-secondary:active {
+    background-color: rgb(86, 94, 100) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+/* -- Estilos del micrositio que tu hoja no tiene -- */
+.ms-convertido .text-multicol-rule {
+    column-rule-color: rgb(166, 177, 182) !important;
+    column-rule-style: dotted !important;
+    column-rule-width: 1px !important;
+}
+
+.ms-convertido .flecha-scroll {
+    color: transparent !important;
+    position: absolute !important;
+    right: 28px !important;
+    top: 4px !important;
+    transform: rotate(-90deg) !important;
+}
+
+.ms-convertido .flecha-scroll span {
+    animation-delay: 0s !important;
+    animation-direction: normal !important;
+    animation-duration: 2s !important;
+    animation-fill-mode: none !important;
+    animation-iteration-count: infinite !important;
+    animation-name: animate !important;
+    animation-play-state: running !important;
+    animation-range-end: normal !important;
+    animation-range-start: normal !important;
+    animation-timeline: auto !important;
+    animation-timing-function: ease !important;
+    border-bottom-color: rgba(0, 0, 0, 0.52) !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 5px !important;
+    border-right-color: rgba(0, 0, 0, 0.52) !important;
+    border-right-style: solid !important;
+    border-right-width: 5px !important;
+    display: block !important;
+    height: 1.5vw !important;
+    margin-bottom: -10px !important;
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+    margin-top: -10px !important;
+    transform: rotate(45deg) !important;
+    width: 1.5vw !important;
+}
+
+.ms-convertido .flecha-scroll span:nth-child(2) {
+    animation-delay: -0.2s !important;
+}
+
+.ms-convertido .flecha-scroll span:nth-child(3) {
+    animation-delay: -0.4s !important;
+}
+
+.ms-convertido .indicador-scroll>.texto-scroll {
+    font-size: 12px !important;
+    left: 0px !important;
+    position: absolute !important;
+}
+
+.ms-convertido .flecha_btn {
+    padding-right: 22px !important;
+    position: relative !important;
+}
+
+.ms-convertido .flecha_btn::after {
+    border-bottom-color: currentcolor !important;
+    border-bottom-style: none !important;
+    border-bottom-width: medium !important;
+    border-image-outset: 0 !important;
+    border-image-repeat: stretch !important;
+    border-image-slice: 100% !important;
+    border-image-source: none !important;
+    border-image-width: 1 !important;
+    border-left-color: currentcolor !important;
+    border-left-style: none !important;
+    border-left-width: medium !important;
+    border-right-color: currentcolor !important;
+    border-right-style: none !important;
+    border-right-width: medium !important;
+    border-top-color: currentcolor !important;
+    border-top-style: none !important;
+    border-top-width: medium !important;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--!Font Awesome Free v6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--%3E%3Cpath fill='rgb(255, 255, 255)' d='M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z'/%3E%3C/svg%3E") !important;
+    display: inline-block !important;
+    height: 19px !important;
+    line-height: 1 !important;
+    margin-bottom: 0px !important;
+    margin-left: 8px !important;
+    margin-right: 0px !important;
+    margin-top: 0px !important;
+    position: relative !important;
+    right: -6px !important;
+    vertical-align: middle !important;
+    width: 10px !important;
+}
+
+/* Fórmulas de micrositios: que el párrafo partido por TinyMCE vuelva a fluir. */
+.ms-convertido p:has(+ math) {
+    display: inline !important;
+}
+
+.ms-convertido math {
+    display: inline-block !important;
+    vertical-align: middle;
+}
+
+.ms-convertido math+p {
+    display: inline !important;
+}
+
+/* ============================================
+   CENTRAR BOTÓN DEL CUESTIONARIO (Quiz)
+   ============================================ */
+.tertiary-navigation .d-flex:has(.quizstartbuttondiv) {
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.tertiary-navigation .navitem:has(.quizstartbuttondiv) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
