@@ -951,3 +951,47 @@
         }
     })();
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function ocultarElementos() {
+        // Lista de títulos que deben tratarse como "banner" (sin ícono ni nombre visible)
+        var titulosBanner = ['Presentación Semana', 'Presentación Módulo', 'Introducción Semana'];
+
+        // ---- RECURSO PÁGINA COMO "BANNER" ----
+        document.querySelectorAll('.modtype_page .instancename').forEach(function(instanceEl) {
+            // Clonamos para poder quitar el span accesshide sin tocar el DOM real
+            var clone = instanceEl.cloneNode(true);
+            var accesshide = clone.querySelector('.accesshide');
+            if (accesshide) accesshide.remove();
+            var titulo = clone.textContent.trim();
+
+            // Verificamos si el título coincide con alguno de los patrones
+            var esBanner = titulosBanner.some(function(patron) {
+                return titulo.includes(patron);
+            });
+
+            if (esBanner) {
+                var grid = instanceEl.closest('.activity-grid');
+                if (grid) {
+                    var icono = grid.querySelector('.activity-icon');
+                    var nombre = grid.querySelector('.activityname');
+                    var nameArea = grid.querySelector('.activity-name-area');
+                    if (icono) icono.style.setProperty('display', 'none', 'important');
+                    if (nombre) nombre.style.setProperty('display', 'none', 'important');
+                    if (nameArea) {
+                        nameArea.style.setProperty('margin', '0', 'important');
+                        nameArea.style.setProperty('min-height', '0', 'important');
+                    }
+                }
+                // Marcamos el contenedor completo de la actividad
+                var activityItem = instanceEl.closest('.activity-item');
+                if (activityItem) {
+                    activityItem.classList.add('js-presentacion-semana');
+                }
+            }
+        });
+    }
+    ocultarElementos();
+});
+</script>

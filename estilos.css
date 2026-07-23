@@ -5331,6 +5331,43 @@ li.activity:not(.assign):not(.questionnaire):not(.quiz) .activityiconcontainer i
 }
 
 /* ==========================================
+   Oculta el icono y el título para dejar solo el contenido (banner)
+   ========================================== */
+
+/* --- Eliminar la celda del nombre (ya vacía) --- */
+.js-presentacion-semana .activity-name-area {
+  display: none !important;
+}
+
+/* --- Romper el grid del activity-grid --- */
+.js-presentacion-semana .activity-grid {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
+/* --- Restaurar el tamaño de fuente al del contexto de Etiqueta --- */
+.js-presentacion-semana .activity-altcontent.activity-description {
+  font-size: 1rem !important;
+}
+
+/* --- Quitar borde/espacio de la descripción y que ocupe el 100% --- */
+.js-presentacion-semana .activity-altcontent.activity-description,
+.js-presentacion-semana .activity-altcontent.activity-description .no-overflow {
+  border-top: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  overflow: visible !important;
+  display: block !important;
+}
+
+/* --- Que el activity-item ocupe el 100% disponible --- */
+.js-presentacion-semana {
+  width: 100% !important;
+}
+
+/* ==========================================
    FIX: Estilos equivalentes para micrositios
    ========================================== */
 
